@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ModMetaData>
+  <name>Imperial Functionality</name>
+  <author>YabbyShabby</author>
+  <packageId>YabbyShabby.ImperialFunctionality</packageId>
+  <description>Adds functionality to various items from VE Empire and Deserters mods.</description>
+  <supportedVersions>
+    <li>1.4</li>
+  </supportedVersions>
+	<loadAfter>
+		<li>OskarPotocki.VFE.Empire</li>
+		<li>OskarPotocki.VFE.Deserters</li>
+	</loadAfter>
+</ModMetaData>
