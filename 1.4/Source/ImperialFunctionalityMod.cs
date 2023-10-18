@@ -25,13 +25,12 @@ namespace ImperialFunctionality
     {
         private int ticksUntilSpawn;
 
-        private bool CanOperate => WaterMainNearby() && parent.Position.Roofed(parent.Map) is false 
+        private bool CanOperate => parent.Spawned && WaterMainNearby() && parent.Position.Roofed(parent.Map) is false 
             && parent.GetComp<CompPowerTrader>().PowerOn;
 
         private bool WaterMainNearby()
         {
             var watermains = parent.Map.listerThings.ThingsOfDef(IF_DefOf.VFED_WaterMain);
-            Log.Message("watermains: " + string.Join(", ", watermains));
             foreach (var waterMain in watermains)
             {
                 if (waterMain.TryGetComp<CompPowerTrader>().PowerOn)
@@ -42,7 +41,6 @@ namespace ImperialFunctionality
                         if (cell.InBounds(parent.Map))
                         {
                             var thing = cell.GetFirstThing(parent.Map, parent.def);
-                            Log.Message(cell + " found thing: " + thing);
                             if (thing == this.parent)
                             {
                                 return true;
@@ -90,10 +88,6 @@ namespace ImperialFunctionality
 
         private void TickInterval(int interval)
         {
-            if (!parent.Spawned)
-            {
-                return;
-            }
             if (CanOperate)
             {
                 ticksUntilSpawn -= interval;
@@ -110,24 +104,36 @@ namespace ImperialFunctionality
             }
         }
 
-        public bool TryDoSpawn()
+        public void TryDoSpawn()
         {
-            if (!parent.Spawned)
-            {
-                return false;
-            }
             var spawnInfo = GetSpawnInfo();
-            if (TryFindSpawnCell(parent, spawnInfo.defToSpawn, spawnInfo.spawnCount, out var result))
+            var spawnCount = spawnInfo.spawnCount;
+            while (spawnCount > 0)
             {
-                Thing thing = ThingMaker.MakeThing(selectedThingDef);
-                thing.stackCount = spawnInfo.spawnCount;
-                if (thing == null)
+                Thing thing = ThingMaker.MakeThing(spawnInfo.defToSpawn);
+                thing.stackCount = Mathf.Min(thing.def.stackLimit, spawnCount);
+                spawnCount -= thing.stackCount;
+                if (TryFindRandomCellNear(parent.Position, parent.Map, 9, out var result))
                 {
-                    Log.Error("Could not spawn anything for " + parent);
+                    if (result.IsValid)
+                    {
+                        GenPlace.TryPlaceThing(thing, result, parent.Map, ThingPlaceMode.Direct, out var lastResultingThing);
+                    }
                 }
-                GenPlace.TryPlaceThing(thing, result, parent.Map, ThingPlaceMode.Direct, out var lastResultingThing);
-                return true;
             }
+        }
+
+        public bool TryFindRandomCellNear(IntVec3 root, Map map, float radius, out IntVec3 result)
+        {
+            foreach (var cell in GenRadial.RadialCellsAround(root, radius, true))
+            {
+                if (cell.GetFirstItem(map) is null)
+                {
+                    result = cell;
+                    return true;
+                }
+            }
+            result = IntVec3.Invalid;
             return false;
         }
 
@@ -161,45 +167,6 @@ namespace ImperialFunctionality
             return 0;
         }
 
-        public static bool TryFindSpawnCell(Thing parent, ThingDef thingToSpawn, int spawnCount, out IntVec3 result)
-        {
-            foreach (IntVec3 item in GenAdj.CellsAdjacent8Way(parent).InRandomOrder())
-            {
-                if (!item.Walkable(parent.Map))
-                {
-                    continue;
-                }
-                Building edifice = item.GetEdifice(parent.Map);
-                if (edifice != null && thingToSpawn.IsEdifice())
-                {
-                    continue;
-                }
-                Building_Door building_Door = edifice as Building_Door;
-                if ((building_Door != null && !building_Door.FreePassage) || (parent.def.passability != Traversability.Impassable && !GenSight.LineOfSight(parent.Position, item, parent.Map)))
-                {
-                    continue;
-                }
-                bool flag = false;
-                List<Thing> thingList = item.GetThingList(parent.Map);
-                for (int i = 0; i < thingList.Count; i++)
-                {
-                    Thing thing = thingList[i];
-                    if (thing.def.category == ThingCategory.Item && (thing.def != thingToSpawn || thing.stackCount > thingToSpawn.stackLimit - spawnCount))
-                    {
-                        flag = true;
-                        break;
-                    }
-                }
-                if (!flag)
-                {
-                    result = item;
-                    return true;
-                }
-            }
-            result = IntVec3.Invalid;
-            return false;
-        }
-
         private void ResetCountdown()
         {
             ticksUntilSpawn = GenDate.TicksPerDay * 7;
@@ -207,7 +174,7 @@ namespace ImperialFunctionality
 
         public override void PostExposeData()
         {
-            Scribe_Defs.Look(ref selectedThingDef, "selectedThingDef");
+            Scribe_Defs.Look(ref selectedThingDef, "ImperialFunctionality_selectedThingDef");
             Scribe_Values.Look(ref ticksUntilSpawn, "ImperialFunctionality_ticksUntilSpawn", 0);
         }
 

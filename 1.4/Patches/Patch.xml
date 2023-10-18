@@ -13,7 +13,8 @@
 				<Steel>250</Steel>
 				<ComponentIndustrial>5</ComponentIndustrial>
 			</costList>
-			<designationCategory>Production</designationCategory>
+			<designationCategory>IF_ImperialTech</designationCategory>
+			<tickerType>Normal</tickerType>
 			<researchPrerequisites>
 				<li>IF_ImperialFarmingTechniques</li>
 			</researchPrerequisites>
@@ -35,10 +36,11 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="VFED_ImperialUnderfarm"]</xpath>
 		<value>
-			<designationCategory>Production</designationCategory>
+			<designationCategory>IF_ImperialTech</designationCategory>
 			<researchPrerequisites>
 				<li>IF_ImperialFarmingTechniques</li>
 			</researchPrerequisites>
+			<tickerType>Normal</tickerType>
 			<costList>
 				<Steel>600</Steel>
 				<Plasteel>100</Plasteel>
