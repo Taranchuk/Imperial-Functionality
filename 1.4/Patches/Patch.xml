@@ -151,7 +151,7 @@
 			</building>
 		</value>
 	</Operation>
-	
+
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/RoyalTitleDef[defName="Duke"]</xpath>
 		<value>
@@ -160,5 +160,89 @@
 			</rewards>
 		</value>
 	</Operation>
-	 
+
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="Consul"]</xpath>
+		<value>
+			<rewards>
+				<Techprint_IF_AdvancedImperialEquipment>1</Techprint_IF_AdvancedImperialEquipment>
+			</rewards>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver" or defName="VFEE_Apparel_AbsolverHelmet" or defName="VFEE_Apparel_TechfriarCrown" or defName="VEE_Gun_Fletcher" or defName="VFEE_MeleeWeapon_Toxblade"]</xpath>
+		<value>
+			<recipeMaker>
+				<researchPrerequisite>IF_AdvancedImperialEquipment</researchPrerequisite>
+				<workAmount>20000</workAmount>
+				<skillRequirements>
+					<Crafting>8</Crafting>
+				</skillRequirements>
+				<recipeUsers Inherit="False">
+					<li>FabricationBench</li>
+				</recipeUsers>
+			</recipeMaker>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VFEE_Apparel_AbsolverHelmet"]</xpath>
+		<value>
+			<costList>
+				<Plasteel>60</Plasteel>
+				<ComponentSpacer>3</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]</xpath>
+		<value>
+			<costList>
+				<Plasteel>50</Plasteel>
+				<ComponentSpacer>4</ComponentSpacer>
+				<ComponentIndustrial>4</ComponentIndustrial>
+				<Cloth>50</Cloth>
+			</costList>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="VEE_Gun_Fletcher"]/costList</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VEE_Gun_Fletcher"]</xpath>
+		<value>
+			<costList>
+				<Plasteel>90</Plasteel>
+				<ComponentSpacer>4</ComponentSpacer>
+			</costList>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VFEE_MeleeWeapon_Toxblade"]</xpath>
+		<value>
+			<costList>
+				<Plasteel>20</Plasteel>
+				<ComponentSpacer>2</ComponentSpacer>
+				<VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">1</VPE_Eltex>
+			</costList>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VFEE_Apparel_TechfriarCrown"]</xpath>
+		<value>
+			<costList>
+				<Plasteel>50</Plasteel>
+				<ComponentSpacer>6</ComponentSpacer>
+				<VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">2</VPE_Eltex>
+			</costList>
+		</value>
+	</Operation> 
+
 </Patch>

@@ -2,7 +2,7 @@
 <Defs>
 
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
-    <defName>IF_Techite disc stack drop</defName>
+    <defName>IF_TechiteDiscStackDrop</defName>
     <label>Techite disc stack drop</label>
     <description>Call for a drop of 3 Techite disc stacks.</description>
     <minTitle>Duke</minTitle>
@@ -17,5 +17,23 @@
     </royalAid>
     <cooldownDays>15</cooldownDays>
   </RoyalTitlePermitDef>
+  
+   <RoyalTitlePermitDef ParentName="DropResourcesBase">
+    <defName>IF_AperitifDrop</defName>
+    <label>Aperitif drop</label>
+    <description>Call for a drop of 10 Aperitif.</description>
+    <minTitle>Knight</minTitle>
+    <faction>Empire</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(2,4)</uiPosition>
+    <royalAid>
+      <itemsToDrop>
+        <VFEE_Aperitif>10</VFEE_Aperitif>
+      </itemsToDrop>
+      <favorCost>4</favorCost>
+    </royalAid>
+    <cooldownDays>15</cooldownDays>
+  </RoyalTitlePermitDef>
 
+ 
 </Defs>

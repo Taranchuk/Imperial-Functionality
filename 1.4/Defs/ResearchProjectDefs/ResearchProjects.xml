@@ -1,44 +1,47 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ResearchProjectDef>
-    <defName>IF_ImperialFarmingTechniques</defName>
-    <label>Imperial Farming techniques</label>
-    <description>placeholder.</description>
-    <baseCost>2000</baseCost>
-    <techLevel>Industrial</techLevel>
-    <prerequisites>
-      <li>MicroelectronicsBasics</li>
-    </prerequisites>
-    <techprintCount>1</techprintCount>
-    <techprintCommonality>2</techprintCommonality>
-    <techprintMarketValue>2000</techprintMarketValue>
-    <heldByFactionCategoryTags>
-      <li>Empire</li>
-    </heldByFactionCategoryTags>
-    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-	<researchViewX>12.00</researchViewX>
-	<researchViewY>2.80</researchViewY>
-  </ResearchProjectDef>
+	<ResearchTabDef>
+		<defName>IF_ImperialTech</defName>
+		<label>imperial tech</label>
+	</ResearchTabDef>
 
-  <ResearchProjectDef>
-    <defName>IF_ImperialTechiteTechniques</defName>
-    <label>Imperial Techite techniques</label>
-    <description>placeholder.</description>
-    <baseCost>2000</baseCost>
-    <techLevel>Industrial</techLevel>
-    <prerequisites>
-      <li>MicroelectronicsBasics</li>
-    </prerequisites>
-    <techprintCount>1</techprintCount>
-    <techprintCommonality>2</techprintCommonality>
-    <techprintMarketValue>2000</techprintMarketValue>
-    <heldByFactionCategoryTags>
-      <li>Empire</li>
-    </heldByFactionCategoryTags>
-    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-	<researchViewX>12.00</researchViewX>
-	<researchViewY>2.80</researchViewY>
-  </ResearchProjectDef>
-  
+	<ResearchProjectDef Name="IF_ImperialTech" Abstract="True">
+		<tab>IF_ImperialTech</tab>
+		<techLevel>Spacer</techLevel>
+		<techprintCount>1</techprintCount>
+		<techprintCommonality>2</techprintCommonality>
+		<techprintMarketValue>2000</techprintMarketValue>
+		<heldByFactionCategoryTags>
+			<li>Empire</li>
+		</heldByFactionCategoryTags>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="IF_ImperialTech">
+		<defName>IF_ImperialFarmingTechniques</defName>
+		<label>Imperial Farming techniques</label>
+		<description>placeholder.</description>
+		<baseCost>2000</baseCost>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>0.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="IF_ImperialTech">
+		<defName>IF_ImperialTechiteTechniques</defName>
+		<label>Imperial Techite techniques</label>
+		<description>placeholder.</description>
+		<baseCost>2000</baseCost>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>0.75</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="IF_ImperialTech">
+		<defName>IF_AdvancedImperialEquipment</defName>
+		<label>Advanced Imperial Equipment</label>
+		<description>placeholder.</description>
+		<baseCost>2000</baseCost>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
 </Defs>
