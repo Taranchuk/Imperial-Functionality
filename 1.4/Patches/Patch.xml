@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+- Underfarms that are completely automatic and require to be placed outside and near a water main that produces selected crops after a set interval
+Awarded at Honor Title: Praetor 
+Unlocked Research Project Imperial Farming techniques, which unlocked buildable Underfarm and Water Main (description still coming up with)
+The Water main will have a  circular radius of 10 (using designator shapes to determine) 
+and any Underfarms nearby will only work while in this radius and not covered by a roof
+
+and produces a set batch amount of selected crops (only able to select a small variety, being Potatoes, Cloth, Healroot, Tinctoria, and Psychoid) every 7 days
+The batches produced will be Potatoes-300 Cloth-250 Tinctoria-100 Psychoid-150 Subject to change based on balance
+
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="VFED_WaterMain" or defName="VFED_ImperialUnderfarm"]/costList</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_WaterMain"]</xpath>
+		<value>
+			<specialDisplayRadius>10.9</specialDisplayRadius>
+			<costList>
+				<Steel>250</Steel>
+				<ComponentIndustrial>5</ComponentIndustrial>
+			</costList>
+			<designationCategory>Production</designationCategory>
+			<researchPrerequisites>
+				<li>IF_ImperialFarmingTechniques</li>
+			</researchPrerequisites>
+			<comps>
+				<li Class="CompProperties_Power">
+					<compClass>CompPowerTrader</compClass>
+					<basePowerConsumption>400</basePowerConsumption>
+					<shortCircuitInRain>false</shortCircuitInRain>
+				</li>
+				<li Class="CompProperties_Flickable"/>
+			</comps>
+			<building>
+				<deconstructible>true</deconstructible>
+			</building>
+			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_ImperialUnderfarm"]</xpath>
+		<value>
+			<designationCategory>Production</designationCategory>
+			<researchPrerequisites>
+				<li>IF_ImperialFarmingTechniques</li>
+			</researchPrerequisites>
+			<costList>
+				<Steel>600</Steel>
+				<Plasteel>100</Plasteel>
+				<ComponentIndustrial>15</ComponentIndustrial>
+			</costList>
+			<comps>
+				<li Class="CompProperties_Power">
+					<compClass>CompPowerTrader</compClass>
+					<basePowerConsumption>800</basePowerConsumption>
+					<shortCircuitInRain>false</shortCircuitInRain>
+				</li>
+				<li Class="CompProperties_Flickable"/>
+				<li>
+					<compClass>ImperialFunctionality.CompImperialSpawner</compClass>
+				</li>
+			</comps>
+			<building>
+				<deconstructible>true</deconstructible>
+			</building>
+			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		</value>
+	</Operation>
+</Patch>

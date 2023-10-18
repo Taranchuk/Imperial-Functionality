@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<IF.SelectSpawnThing>Current crop: {0}</IF.SelectSpawnThing>
+	<IF.SelectSpawnThingDesc>Click to select a crop to harvest</IF.SelectSpawnThingDesc>
+	<IF.UnderfarmInoperable>Underfarm is not operable. Requires power, unroofed place and working water main nearby.</IF.UnderfarmInoperable>
+</LanguageData>
