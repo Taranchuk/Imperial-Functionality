@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RoyalTitlePermitDef ParentName="DropResourcesBase">
+    <defName>IF_Techite disc stack drop</defName>
+    <label>Techite disc stack drop</label>
+    <description>Call for a drop of 3 Techite disc stacks.</description>
+    <minTitle>Duke</minTitle>
+    <faction>Empire</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(1,4)</uiPosition>
+    <royalAid>
+      <itemsToDrop>
+        <VFED_TechiteDiscStack>3</VFED_TechiteDiscStack>
+      </itemsToDrop>
+      <favorCost>8</favorCost>
+    </royalAid>
+    <cooldownDays>15</cooldownDays>
+  </RoyalTitlePermitDef>
+
+</Defs>

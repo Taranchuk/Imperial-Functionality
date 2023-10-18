@@ -70,6 +70,10 @@
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompImperialSpawner.cs" />
+    <Compile Include="CompTechprintSpawner.cs" />
+    <Compile Include="CompUnderfarmSpawner.cs" />
+    <Compile Include="IF_DefOf.cs" />
     <Compile Include="ImperialFunctionalityMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
