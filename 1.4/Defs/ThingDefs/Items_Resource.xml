@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>IF_ImperialInfo</defName>
+    <label>Imperial info techprint</label>
+    <description>placeholder.</description>
+    <graphicData>
+      <texPath>Things/Item/Special/TechprintUltratech</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>2000</MarketValue>
+      <Mass>0.03</Mass>
+      <Flammability>1</Flammability>
+    </statBases>
+  </ThingDef>
+  
+</Defs>

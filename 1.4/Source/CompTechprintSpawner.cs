@@ -19,11 +19,9 @@ namespace ImperialFunctionality
             if (CanOperate)
             {
                 var comp = parent.GetComp<CompRefuelable>();
-                if (isWorking is false && comp.HasFuel && DefDatabase<ResearchProjectDef>.AllDefs
-                    .Where(project => project.TechprintCount > 0 && project.heldByFactionCategoryTags.Contains(FactionDefOf.Empire.categoryTag))
-                    .Select(project => project.Techprint).TryRandomElement(out var techprint))
+                if (isWorking is false && comp.HasFuel)
                 {
-                    selectedThingDef = techprint;
+                    selectedThingDef = IF_DefOf.IF_ImperialInfo;
                     comp.ConsumeFuel(1f);
                     isWorking = true;
                     ResetCountdown();

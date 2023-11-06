@@ -4,4 +4,6 @@
 	<IF.SelectSpawnThing>Current crop: {0}</IF.SelectSpawnThing>
 	<IF.SelectSpawnThingDesc>Click to select a crop to harvest</IF.SelectSpawnThingDesc>
 	<IF.UnderfarmInoperable>Underfarm is not operable. Requires power, unroofed place and working water main nearby.</IF.UnderfarmInoperable>
+	<IF.GetHonorQuestForSilver>Get a honor quest for 5000 silver</IF.GetHonorQuestForSilver>
+	<IF.GetHonorQuestForSilverNotEnoughMoney>not enough money</IF.GetHonorQuestForSilverNotEnoughMoney>
 </LanguageData>

@@ -21,7 +21,7 @@
 	<ResearchProjectDef ParentName="IF_ImperialTech">
 		<defName>IF_ImperialFarmingTechniques</defName>
 		<label>Imperial Farming techniques</label>
-		<description>placeholder.</description>
+		<description>Craft autonomously operated underfarms used by the empire to feed the masses.</description>
 		<baseCost>2000</baseCost>
 		<researchViewX>0.00</researchViewX>
 		<researchViewY>0.00</researchViewY>
@@ -30,7 +30,7 @@
 	<ResearchProjectDef ParentName="IF_ImperialTech">
 		<defName>IF_ImperialTechiteTechniques</defName>
 		<label>Imperial Techite techniques</label>
-		<description>placeholder.</description>
+		<description>Contruct techprinters which can be used to generate profitable Imperial Info Techprints when fueled by techite disc stacks.</description>
 		<baseCost>2000</baseCost>
 		<researchViewX>0.00</researchViewX>
 		<researchViewY>0.75</researchViewY>
@@ -39,9 +39,10 @@
 	<ResearchProjectDef ParentName="IF_ImperialTech">
 		<defName>IF_AdvancedImperialEquipment</defName>
 		<label>Advanced Imperial Equipment</label>
-		<description>placeholder.</description>
+		<description>Craft advanced imperial weapons and armor used for when the empire engages in specialized warfare.</description>
 		<baseCost>2000</baseCost>
 		<researchViewX>0.00</researchViewX>
 		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>
+	
 </Defs>

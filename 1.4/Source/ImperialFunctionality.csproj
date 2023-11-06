@@ -70,12 +70,17 @@
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building_CrateBiosecured_GenerateContents_Patch.cs" />
+    <Compile Include="Building_SupplyCrate_GenerateContents_Patch.cs" />
     <Compile Include="CompImperialSpawner.cs" />
     <Compile Include="CompTechprintSpawner.cs" />
     <Compile Include="CompUnderfarmSpawner.cs" />
+    <Compile Include="FactionDialogMaker_FactionDialogFor_Patch.cs" />
     <Compile Include="IF_DefOf.cs" />
     <Compile Include="ImperialFunctionalityMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestNode_AnyRoyalColonists.cs" />
+    <Compile Include="QuestNode_SpawnSupplyCrates.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
