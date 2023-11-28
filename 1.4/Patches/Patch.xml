@@ -328,7 +328,7 @@
 			</costList>
 			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 			<hasInteractionCell>true</hasInteractionCell>
-			<interactionCellOffset>(0,0,2)</interactionCellOffset>
+			<interactionCellOffset>(0,0,-2)</interactionCellOffset>
 		</value>
 	</Operation>
 	

@@ -76,8 +76,9 @@ namespace ImperialFunctionality
 
         public override void DoFind(Pawn worker)
         {
-            raidPointsFound += WorkingDisplayBanks.Count * 100f;
-            Find.LetterStack.ReceiveLetter("IF.LetterLabelFoundRaidersNearby".Translate(), "IF.LetterLabelFoundRaidersNearbyDesc".Translate(worker.Named("FINDER"), raidPointsFound), LetterDefOf.PositiveEvent);
+            var points = WorkingDisplayBanks.Count * 100f;
+            raidPointsFound += points;
+            Find.LetterStack.ReceiveLetter("IF.LetterLabelFoundRaidersNearby".Translate(), "IF.LetterLabelFoundRaidersNearbyDesc".Translate(worker.Named("FINDER"), points), LetterDefOf.PositiveEvent);
         }
 
         public override string CompInspectStringExtra()
