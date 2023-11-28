@@ -45,4 +45,13 @@
 		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>
 	
+	<ResearchProjectDef ParentName="IF_ImperialTech">
+		<defName>IF_ImperialSurveillanceSystems</defName>
+		<label>Imperial Surveillance Systems</label>
+		<description>text.todo.</description>
+		<baseCost>2000</baseCost>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+
 </Defs>

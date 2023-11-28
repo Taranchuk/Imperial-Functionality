@@ -245,4 +245,114 @@
 		</value>
 	</Operation> 
 
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="Baron"]</xpath>
+		<value>
+			<rewards>
+				<Techprint_IF_ImperialSurveillanceSystems>1</Techprint_IF_ImperialSurveillanceSystems>
+			</rewards>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillancePillar" or defName="VFED_SurveillanceDisplayBank" or defName="VFED_SurveillanceStation"]/costList</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillancePillar"]</xpath>
+		<value>
+			<designationCategory>IF_ImperialTech</designationCategory>
+			<researchPrerequisites>
+				<li>IF_ImperialSurveillanceSystems</li>
+			</researchPrerequisites>
+			<costList>
+				<Steel>100</Steel>
+				<ComponentIndustrial>4</ComponentIndustrial>
+			</costList>
+			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillancePillar"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_Flickable"/>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillanceDisplayBank"]</xpath>
+		<value>
+			<designationCategory>IF_ImperialTech</designationCategory>
+			<researchPrerequisites>
+				<li>IF_ImperialSurveillanceSystems</li>
+			</researchPrerequisites>
+			<costList>
+				<Steel>100</Steel>
+				<ComponentIndustrial>4</ComponentIndustrial>
+			</costList>
+			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillanceDisplayBank"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>50</basePowerConsumption>
+				<shortCircuitInRain>false</shortCircuitInRain>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>1</maxSimultaneous>
+				<maxDistance>12.9</maxDistance>
+			</li>
+			<li>
+				<compClass>ImperialFunctionality.CompDisplayBank</compClass>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillanceStation"]</xpath>
+		<value>
+			<designationCategory>IF_ImperialTech</designationCategory>
+			<researchPrerequisites>
+				<li>IF_ImperialSurveillanceSystems</li>
+			</researchPrerequisites>
+			<costList>
+				<Steel>150</Steel>
+				<ComponentIndustrial>5</ComponentIndustrial>
+				<ComponentSpacer>4</ComponentSpacer>
+			</costList>
+			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+			<hasInteractionCell>true</hasInteractionCell>
+			<interactionCellOffset>(0,0,2)</interactionCellOffset>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillanceStation"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>750</basePowerConsumption>
+				<shortCircuitInRain>false</shortCircuitInRain>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="ImperialFunctionality.CompProperties_ScannerSurveillance">
+				<scanSpeedStat>ResearchSpeed</scanSpeedStat>
+				<scanFindMtbDays>3</scanFindMtbDays>
+				<scanFindGuaranteedDays>6</scanFindGuaranteedDays>
+				<soundWorking>ScannerGroundPenetrating_Ambience</soundWorking>
+			</li>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>VFED_SurveillanceDisplayBank</li>
+				</linkableFacilities>
+			</li>
+		</value>
+	</Operation>
+	
 </Patch>
