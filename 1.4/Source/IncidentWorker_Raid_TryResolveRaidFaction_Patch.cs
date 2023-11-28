@@ -7,8 +7,8 @@ using VFED;
 
 namespace ImperialFunctionality
 {
-    [HarmonyPatch(typeof(IncidentWorker_Raid), "TryGenerateRaidInfo")]
-    public static class IncidentWorker_Raid_TryGenerateRaidInfo_Patch
+    [HarmonyPatch(typeof(IncidentWorker_RaidEnemy), "TryResolveRaidFaction")]
+    public static class IncidentWorker_RaidEnemy_TryResolveRaidFaction_Patch
     {
         public static void Postfix(IncidentParms parms, ref bool __result)
         {

@@ -80,7 +80,7 @@
     <Compile Include="FactionDialogMaker_FactionDialogFor_Patch.cs" />
     <Compile Include="IF_DefOf.cs" />
     <Compile Include="ImperialFunctionalityMod.cs" />
-    <Compile Include="IncidentWorker_Raid_TryGenerateRaidInfo_Patch.cs" />
+    <Compile Include="IncidentWorker_Raid_TryResolveRaidFaction_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestNode_AnyRoyalColonists.cs" />
     <Compile Include="QuestNode_SpawnSupplyCrates.cs" />
