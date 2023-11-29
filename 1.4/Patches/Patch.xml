@@ -279,6 +279,13 @@
 			<li Class="CompProperties_Flickable"/>
 		</value>
 	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillancePillar"]/building</xpath>
+		<value>
+				<deconstructible>true</deconstructible>
+		</value>
+	</Operation>
 	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="VFED_SurveillanceDisplayBank"]</xpath>
@@ -313,7 +320,14 @@
 			</li>
 		</value>
 	</Operation>
-
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillanceDisplayBank"]/building</xpath>
+		<value>
+				<deconstructible>true</deconstructible>
+		</value>
+	</Operation>
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="VFED_SurveillanceStation"]</xpath>
 		<value>
@@ -329,6 +343,13 @@
 			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 			<hasInteractionCell>true</hasInteractionCell>
 			<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_SurveillanceStation"]/building</xpath>
+		<value>
+				<deconstructible>true</deconstructible>
 		</value>
 	</Operation>
 	

@@ -67,13 +67,14 @@
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <Publicize Include="Assembly-CSharp" />
+    <Publicize Include="Assembly-CSharp;VFED" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Building_CrateBiosecured_GenerateContents_Patch.cs" />
     <Compile Include="Building_SupplyCrate_GenerateContents_Patch.cs" />
     <Compile Include="CompDisplayBank.cs" />
     <Compile Include="CompImperialSpawner.cs" />
+    <Compile Include="CompSurveillancePillar_Trigger_Patch.cs" />
     <Compile Include="CompSurveillanceScanner.cs" />
     <Compile Include="CompTechprintSpawner.cs" />
     <Compile Include="CompUnderfarmSpawner.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestNode_AnyRoyalColonists.cs" />
     <Compile Include="QuestNode_SpawnSupplyCrates.cs" />
+    <Compile Include="Thing_SetFactionDirect.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
