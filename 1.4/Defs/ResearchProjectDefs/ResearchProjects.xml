@@ -48,10 +48,20 @@
 	<ResearchProjectDef ParentName="IF_ImperialTech">
 		<defName>IF_ImperialSurveillanceSystems</defName>
 		<label>Imperial Surveillance Systems</label>
-		<description>text.todo.</description>
+		<description>Construct various forms of surveillance systems to deter future raids.</description>
 		<baseCost>2000</baseCost>
 		<researchViewX>0.00</researchViewX>
-		<researchViewY>1.5</researchViewY>
+  <researchViewY>2.25</researchViewY>
 	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="IF_ImperialTech">
+		<defName>IF_ImperialPropagandaTactics</defName>
+		<label>Imperial Propaganda tactics</label>
+		<description>Tailor high-quality imperial propaganda to enlighten others.</description>
+		<baseCost>2000</baseCost>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+
 
 </Defs>

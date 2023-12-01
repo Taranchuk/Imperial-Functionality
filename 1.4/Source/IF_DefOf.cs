@@ -10,5 +10,6 @@ namespace ImperialFunctionality
         public static ThingDef IF_ImperialInfo, VFED_SupplyCrate, VFED_BiosecuredCrate;
         public static FactionDef VFEE_Deserters;
         public static ThingDef VFED_SurveillancePillar, VFED_SurveillanceStation;
+        public static ThingDef IF_ImperialPropaganda;
     }
 }

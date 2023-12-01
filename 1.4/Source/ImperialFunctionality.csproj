@@ -79,8 +79,10 @@
     <Compile Include="CompTechprintSpawner.cs" />
     <Compile Include="CompUnderfarmSpawner.cs" />
     <Compile Include="FactionDialogMaker_FactionDialogFor_Patch.cs" />
+    <Compile Include="FactionGiftUtility_GetBaseGoodwillChange_Patch.cs" />
     <Compile Include="IF_DefOf.cs" />
     <Compile Include="ImperialFunctionalityMod.cs" />
+    <Compile Include="ImperialPropaganda.cs" />
     <Compile Include="IncidentWorker_Raid_TryResolveRaidFaction_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestNode_AnyRoyalColonists.cs" />

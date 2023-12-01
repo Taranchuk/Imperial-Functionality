@@ -375,5 +375,14 @@
 			</li>
 		</value>
 	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Marquess"]</xpath>
+		<value>
+			<rewards>
+				<Techprint_IF_ImperialPropagandaTactics>1</Techprint_IF_ImperialPropagandaTactics>
+			</rewards>
+		</value>
+	</Operation>
 	
 </Patch>
