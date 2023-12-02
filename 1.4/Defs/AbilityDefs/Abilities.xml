@@ -4,7 +4,7 @@
 	<AbilityDef>
 		<defName>IF_FormEmpireAlliance</defName>
 		<label>Form alliance with Empire</label>
-		<description>text.todo.</description>
+		<description>Use noble influence to sway the Empire over to your side along with the beliefs you follow.</description>
 		<jobDef>CastAbilityOnThing</jobDef>
 		<targetRequired>False</targetRequired>
 		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>

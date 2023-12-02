@@ -422,6 +422,16 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_ImperialMegaHighShield"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>12</heatPerSecond>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/RoyalTitleDef[defName="VFEE_Despot"]/grantedAbilities</xpath>
 		<value>
 			<li>IF_FormEmpireAlliance</li>
