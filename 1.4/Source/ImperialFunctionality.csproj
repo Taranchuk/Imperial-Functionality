@@ -73,6 +73,7 @@
     <Compile Include="Building_CrateBiosecured_GenerateContents_Patch.cs" />
     <Compile Include="Building_SupplyCrate_GenerateContents_Patch.cs" />
     <Compile Include="CompDisplayBank.cs" />
+    <Compile Include="CompFormEmpireAlliance.cs" />
     <Compile Include="CompImperialSpawner.cs" />
     <Compile Include="CompSurveillancePillar_Trigger_Patch.cs" />
     <Compile Include="CompSurveillanceScanner.cs" />

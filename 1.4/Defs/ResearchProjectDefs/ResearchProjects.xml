@@ -51,7 +51,7 @@
 		<description>Construct various forms of surveillance systems to deter future raids.</description>
 		<baseCost>2000</baseCost>
 		<researchViewX>0.00</researchViewX>
-  <researchViewY>2.25</researchViewY>
+		<researchViewY>2.25</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef ParentName="IF_ImperialTech">
@@ -62,6 +62,14 @@
 		<researchViewX>0.00</researchViewX>
 		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
-
+	
+	<ResearchProjectDef ParentName="IF_ImperialTech">
+		<defName>IF_AdvancedImperialDefenses</defName>
+		<label>Advanced Imperial Defenses</label>
+		<description>text.todo.</description>
+		<baseCost>2000</baseCost>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>3.75</researchViewY>
+	</ResearchProjectDef>
 
 </Defs>

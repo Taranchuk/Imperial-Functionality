@@ -385,4 +385,46 @@
 		</value>
 	</Operation>
 	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Archduke"]</xpath>
+		<value>
+			<rewards>
+				<Techprint_IF_AdvancedImperialDefenses>1</Techprint_IF_AdvancedImperialDefenses>
+			</rewards>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="VFED_ImperialMegaHighShield"]/costList</xpath>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_ImperialMegaHighShield"]</xpath>
+		<value>
+			<costList>
+				<Steel>2000</Steel>
+				<Plasteel>500</Plasteel>
+				<ComponentSpacer>15</ComponentSpacer>
+				<ComponentIndustrial>20</ComponentIndustrial>
+			</costList>
+			<designationCategory>IF_ImperialTech</designationCategory>
+			<researchPrerequisites>
+				<li>IF_AdvancedImperialDefenses</li>
+			</researchPrerequisites>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VFED_ImperialMegaHighShield"]/building</xpath>
+		<value>
+			<deconstructible>true</deconstructible>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RoyalTitleDef[defName="VFEE_Despot"]/grantedAbilities</xpath>
+		<value>
+			<li>IF_FormEmpireAlliance</li>
+		</value>
+	</Operation>
 </Patch>
