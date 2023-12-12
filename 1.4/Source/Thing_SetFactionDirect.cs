@@ -10,7 +10,7 @@ namespace ImperialFunctionality
     {
         public static void Postfix(Thing __instance)
         {
-            if (__instance.Faction == Faction.OfPlayer)
+            if (__instance.Faction != null && __instance.Faction == Faction.OfPlayerSilentFail)
             {
                 var comp = __instance.TryGetComp<CompIntelExtract>();
                 if (comp != null)

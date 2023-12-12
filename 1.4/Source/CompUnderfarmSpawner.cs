@@ -53,6 +53,7 @@ namespace ImperialFunctionality
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
+            base.PostSpawnSetup(respawningAfterLoad);
             if (!respawningAfterLoad)
             {
                 selectedThingDef = Candidates.First();
