@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>IF_ImperialInfo</defName>
 		<label>Imperial info techprint</label>
-		<description>placeholder.</description>
+		<description>Freshly-compiled imperial data ranging from the smallest of details such as a count taking out his dog for a walk all the way to a knight preparing for an ambush.</description>
 		<graphicData>
 			<texPath>Things/Item/Special/TechprintUltratech</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -24,6 +24,7 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>IF_ImperialPropaganda</defName>
 		<label>imperial propaganda</label>
+		<description>Compiled flyers and papers dictating in many questionable and convincing ways how the Empire is the way to go.</description>
 		<thingClass>ImperialFunctionality.ImperialPropaganda</thingClass>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Standard_Drop</soundDrop>

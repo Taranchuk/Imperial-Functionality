@@ -128,6 +128,7 @@ namespace ImperialFunctionality
                         floatList.Add(new FloatMenuOption(thingDef.LabelCap, delegate
                         {
                             selectedThingDef = thingDef;
+                            ResetCountdown();
                         }));
                     }
                     Find.WindowStack.Add(new FloatMenu(floatList));
