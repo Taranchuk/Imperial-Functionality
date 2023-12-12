@@ -431,10 +431,4 @@
 		</value>
 	</Operation>
 	
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/RoyalTitleDef[defName="VFEE_Despot"]/grantedAbilities</xpath>
-		<value>
-			<li>IF_FormEmpireAlliance</li>
-		</value>
-	</Operation>
 </Patch>

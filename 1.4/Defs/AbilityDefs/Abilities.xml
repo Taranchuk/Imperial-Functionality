@@ -31,4 +31,39 @@
 			<li Class="ImperialFunctionality.CompProperties_FormEmpireAlliance"/>
 		</comps>
 	</AbilityDef>
+
+	<AbilityDef>
+		<defName>IF_RoyalInvitation</defName>
+		<label>Royal Invitation</label>
+		<description>Send out a localized invitation to nearby nobles to request an event.</description>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<iconPath>World/WorldObjects/Expanding/Empire</iconPath>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<cooldownTicksRange>1800000</cooldownTicksRange>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0</warmupTime>
+			<range>-1</range>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="ImperialFunctionality.CompProperties_RoyalInvitation"/>
+		</comps>
+	</AbilityDef>
+	
+New Gizmo unlocked when any pawn reaches Archduke/Archduchess rank
+Each gizmo has a 30 day cool down and creates a quest for either a Ball or Art Exhibition from the Empire Expanded Mod
+	
 </Defs>
