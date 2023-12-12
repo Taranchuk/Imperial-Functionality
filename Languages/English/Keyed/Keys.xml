@@ -4,7 +4,7 @@
 	<IF.SelectSpawnThing>Current crop: {0}</IF.SelectSpawnThing>
 	<IF.SelectSpawnThingDesc>Click to select a crop to harvest</IF.SelectSpawnThingDesc>
 	<IF.UnderfarmInoperable>Underfarm is not operable. Requires power, unroofed place and working water main nearby.</IF.UnderfarmInoperable>
-	<IF.GetHonorQuestForSilver>Get a honor quest for 5000 silver</IF.GetHonorQuestForSilver>
+	<IF.GetHonorQuestForSilver>Request a royal commission for 5000 silver</IF.GetHonorQuestForSilver>
 	<IF.GetHonorQuestForSilverNotEnoughMoney>not enough money</IF.GetHonorQuestForSilverNotEnoughMoney>
 	<IF.LetterLabelFoundRaidersNearby>Raiders spotted nearby</IF.LetterLabelFoundRaidersNearby>
 	<IF.LetterLabelFoundRaidersNearbyDesc>{FINDER_nameDef} has found raider forces roaming nearby using the surveillance console! Nearby settlements were notified of them and they took actions against them. Raid threat is reduced approximately by {1} combat points.</IF.LetterLabelFoundRaidersNearbyDesc>
