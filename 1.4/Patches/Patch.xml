@@ -312,7 +312,7 @@
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Facility">
-				<maxSimultaneous>1</maxSimultaneous>
+				<maxSimultaneous>999999</maxSimultaneous>
 				<maxDistance>12.9</maxDistance>
 			</li>
 			<li>
