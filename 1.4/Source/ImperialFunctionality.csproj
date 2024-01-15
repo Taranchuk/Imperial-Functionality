@@ -90,7 +90,7 @@
     <Compile Include="QuestNode_AnyRoyalColonists.cs" />
     <Compile Include="QuestNode_SpawnSupplyCrates.cs" />
     <Compile Include="RoyalTitlePermitWorker_DropResources_RandomAmount.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Core.cs" />
     <Compile Include="Thing_SetFactionDirect.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,9 +1,10 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.QuestGen;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
-
 namespace ImperialFunctionality
 {
     [HarmonyPatch(typeof(FactionDialogMaker), "FactionDialogFor")]
@@ -21,13 +22,24 @@ namespace ImperialFunctionality
                 node.action = delegate
                 {
                     TradeUtility.LaunchSilver(Find.CurrentMap, 5000);
-                    var slate = new Slate();
-                    slate.Set("points", StorytellerUtility.DefaultThreatPointsNow(Find.World));
-                    var questDef = DefDatabase<QuestScriptDef>.AllDefs.Where(x => x.canGiveRoyalFavor && x.CanRun(slate)).RandomElement();
-                    Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(questDef, slate);
-                    if (!quest.hidden && quest.root.sendAvailableLetter)
+                    var count = 0;
+                    while (count < 50)
                     {
-                        QuestUtility.SendLetterQuestAvailable(quest);
+                        count++;
+                        var slate = new Slate();
+                        slate.Set("points", StorytellerUtility.DefaultThreatPointsNow(Find.World));
+                        var questDef = Core.imperialQuestsWithRoyalFavors.Where(x => x.CanRun(slate)).RandomElement();
+                        Quest quest = QuestGen.Generate(questDef, slate);
+                        var rewardChoice = quest.PartsListForReading.OfType<QuestPart_Choice>().FirstOrDefault();
+                        if (rewardChoice != null && rewardChoice.choices.Any(x => x.rewards.Any(x => x is Reward_RoyalFavor favor && favor.faction == Faction.OfEmpire)))
+                        {
+                            Find.QuestManager.Add(quest);
+                            if (!quest.hidden && quest.root.sendAvailableLetter)
+                            {
+                                QuestUtility.SendLetterQuestAvailable(quest);
+                            }
+                            break;
+                        }
                     }
                 };
                 node.resolveTree = true;
