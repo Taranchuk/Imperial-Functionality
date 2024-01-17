@@ -175,6 +175,7 @@
 		<xpath>/Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver" or defName="VFEE_Apparel_AbsolverHelmet" or defName="VFEE_Apparel_TechfriarCrown" or defName="VEE_Gun_Fletcher" or defName="VFEE_MeleeWeapon_Toxblade"]</xpath>
 		<value>
 			<recipeMaker>
+				<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
 				<researchPrerequisite>IF_AdvancedImperialEquipment</researchPrerequisite>
 				<workAmount>20000</workAmount>
 				<skillRequirements>
