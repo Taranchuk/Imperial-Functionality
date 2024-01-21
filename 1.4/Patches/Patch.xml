@@ -181,6 +181,7 @@
 				<skillRequirements>
 					<Crafting>8</Crafting>
 				</skillRequirements>
+				<workSkill>Crafting</workSkill>
 				<recipeUsers Inherit="False">
 					<li>FabricationBench</li>
 				</recipeUsers>
