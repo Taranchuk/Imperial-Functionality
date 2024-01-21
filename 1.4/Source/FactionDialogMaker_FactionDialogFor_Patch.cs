@@ -21,24 +21,31 @@ namespace ImperialFunctionality
                 };
                 node.action = delegate
                 {
-                    TradeUtility.LaunchSilver(Find.CurrentMap, 5000);
                     var count = 0;
                     while (count < 50)
                     {
                         count++;
-                        var slate = new Slate();
-                        slate.Set("points", StorytellerUtility.DefaultThreatPointsNow(Find.World));
-                        var questDef = Core.imperialQuestsWithRoyalFavors.Where(x => x.CanRun(slate)).RandomElement();
-                        Quest quest = QuestGen.Generate(questDef, slate);
-                        var rewardChoice = quest.PartsListForReading.OfType<QuestPart_Choice>().FirstOrDefault();
-                        if (rewardChoice != null && rewardChoice.choices.Any(x => x.rewards.Any(x => x is Reward_RoyalFavor favor && favor.faction == Faction.OfEmpire)))
+                        try
                         {
-                            Find.QuestManager.Add(quest);
-                            if (!quest.hidden && quest.root.sendAvailableLetter)
+                            var slate = new Slate();
+                            slate.Set("points", StorytellerUtility.DefaultThreatPointsNow(Find.World));
+                            var questDef = Core.imperialQuestsWithRoyalFavors.Where(x => x.CanRun(slate)).RandomElement();
+                            Quest quest = QuestGen.Generate(questDef, slate);
+                            var rewardChoice = quest.PartsListForReading.OfType<QuestPart_Choice>().FirstOrDefault();
+                            if (rewardChoice != null && rewardChoice.choices.Any(x => x.rewards.Any(x => x is Reward_RoyalFavor favor && favor.faction == Faction.OfEmpire)))
                             {
-                                QuestUtility.SendLetterQuestAvailable(quest);
+                                Find.QuestManager.Add(quest);
+                                if (!quest.hidden && quest.root.sendAvailableLetter)
+                                {
+                                    QuestUtility.SendLetterQuestAvailable(quest);
+                                }
+                                TradeUtility.LaunchSilver(Find.CurrentMap, 5000);
+                                break;
                             }
-                            break;
+                        }
+                        catch (Exception ex)
+                        {
+
                         }
                     }
                 };
