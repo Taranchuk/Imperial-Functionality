@@ -8,8 +8,28 @@ namespace ImperialFunctionality
 {
     public class CompUnderfarmSpawner : CompImperialSpawner
     {
-        protected override bool CanOperate => parent.Spawned && WaterMainNearby() && parent.Position.Roofed(parent.Map) is false 
+        public CompRefuelable compRefuelable;
+        protected override bool CanOperate
+        {
+            get
+            {
+                var canOperate = parent.Spawned && WaterMainNearby() && parent.Position.Roofed(parent.Map) is false
             && parent.GetComp<CompPowerTrader>().PowerOn;
+                if (canOperate)
+                {
+                    if (compRefuelable != null && compRefuelable.HasFuel is false) 
+                    {
+                        return false;
+                    }
+                    if (ModCompatibility.HasPipeCompAndIsEmpty(parent))
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+                return false;
+            }
+        }
 
         private bool WaterMainNearby()
         {
@@ -18,6 +38,15 @@ namespace ImperialFunctionality
             {
                 if (waterMain.TryGetComp<CompPowerTrader>().PowerOn)
                 {
+                    var compRefuelable = waterMain.TryGetComp<CompRefuelable>();
+                    if (compRefuelable != null && !compRefuelable.HasFuel)
+                    {
+                        continue;
+                    }
+                    if (ModCompatibility.HasPipeCompAndIsEmpty(waterMain))
+                    {
+                        continue;
+                    }
                     foreach (var cell in GenRadial.RadialCellsAround(waterMain.Position, waterMain.def.specialDisplayRadius,
                         useCenter: true))
                     {
@@ -26,6 +55,7 @@ namespace ImperialFunctionality
                             var thing = cell.GetFirstThing(parent.Map, parent.def);
                             if (thing == this.parent)
                             {
+
                                 return true;
                             }
                         }
@@ -54,6 +84,7 @@ namespace ImperialFunctionality
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+            compRefuelable = parent.GetComp<CompRefuelable>();
             if (!respawningAfterLoad)
             {
                 selectedThingDef = Candidates.First();

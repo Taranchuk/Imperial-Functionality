@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BadHygiene">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\836308268\1.4\Assemblies\BadHygiene.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -86,6 +90,7 @@
     <Compile Include="ImperialFunctionalityMod.cs" />
     <Compile Include="ImperialPropaganda.cs" />
     <Compile Include="IncidentWorker_Raid_TryResolveRaidFaction_Patch.cs" />
+    <Compile Include="ModCompatibility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestNode_AnyRoyalColonists.cs" />
     <Compile Include="QuestNode_SpawnSupplyCrates.cs" />
