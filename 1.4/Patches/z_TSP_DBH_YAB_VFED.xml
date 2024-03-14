@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<!-- Aelanna's Model No-Match Detector and Insertion Code -->
+	<!-- Special thanks to Aelanna for straight-up saving me scores of headaches! -->
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]</xpath>
+			<success>Always</success>
+			<value>
+				<comps></comps>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]</xpath>
+			<success>Always</success>
+			<value>
+				<comps></comps>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]/placeWorkers</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]</xpath>
+			<success>Always</success>
+			<value>
+				<placeWorkers></placeWorkers>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]/placeWorkers</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]</xpath>
+			<success>Always</success>
+			<value>
+				<placeWorkers></placeWorkers>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]/thingClass</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]</xpath>
+			<success>Always</success>
+			<value>
+				<thingClass>Building</thingClass>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]/thingClass</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]</xpath>
+			<success>Always</success>
+			<value>
+				<thingClass>Building</thingClass>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!--
+	<Operation Class="PatchOperationConditional">
+	Does this exist?
+		<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]/placeWorkers</xpath>
+		If it does, add this.
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]/placeWorkers</xpath>
+			<success>Always</success>
+			<value>
+				<li MayRequire="dubwise.dubsbadhygiene">DubsBadHygiene.PlaceWorker_SewageGrid</li>
+				<li MayRequire="dubwise.dubsbadhygiene">DubsBadHygiene.PlaceWorker_UserGrid</li>
+			</value>
+		</match>
+		If the first EXPATH does not exist, the original code stands.
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	Does this exist?
+		<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]/placeWorkers</xpath>
+		If it does, add this.
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]/placeWorkers</xpath>
+			<success>Always</success>
+			<value>
+				<li MayRequire="dubwise.dubsbadhygiene">DubsBadHygiene.PlaceWorker_SewageGrid</li>
+				<li MayRequire="dubwise.dubsbadhygiene">DubsBadHygiene.PlaceWorker_UserGrid</li>
+			</value>
+		</match>
+		If the first EXPATH does not exist, the original code stands.
+	</Operation>
+	-->
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+	<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]/comps</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="VFED_WaterMain"]/comps</xpath>
+			<value>
+				<comps>
+					<li Class="DubsBadHygiene.CompProperties_Pipe" MayRequire="dubwise.dubsbadhygiene">
+						<mode>Sewage</mode>
+					</li>
+					<li Class="DubsBadHygiene.CompProperties_WaterPumpingStation" MayRequire="dubwise.dubsbadhygiene">
+						<Capacity>25000</Capacity>
+					</li>
+					<li Class="DubsBadHygiene.CompProperties_SepticTank" MayRequire="dubwise.dubsbadhygiene">
+						<compClass>DubsBadHygiene.CompSewageTreatment</compClass>
+						<TreatedPerDay>100</TreatedPerDay>
+						<capacity>20000</capacity>
+						<priority>2</priority>
+					</li>
+					<li Class="DubsBadHygiene.CompProperties_Blockage" MayRequire="dubwise.dubsbadhygiene"></li>
+					<li Class="CompProperties_Power">
+						<compClass>CompPowerTrader</compClass>
+						<basePowerConsumption>3400</basePowerConsumption>
+						<shortCircuitInRain>false</shortCircuitInRain>
+					</li>
+					<li Class="CompProperties_Flickable"/>
+				</comps>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+	<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]/comps</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="VFED_ImperialUnderfarm"]/comps</xpath>
+			<value>
+				<comps>
+					<li>
+						<compClass>ImperialFunctionality.CompUnderfarmSpawner</compClass>
+					</li>
+					<li Class="PipeSystem.CompProperties_Resource" MayRequire="xmb.ancienthydroponicfarmfacilities.mo">
+						<pipeNet>BreadMo_NutrientNetwork</pipeNet>
+					</li>
+					<!--
+					<li Class="BreadMoAncientFarm.CompProperties_ResourceTrader" MayRequire="xmb.ancienthydroponicfarmfacilities.mo">
+						<pipeNet>BreadMo_NutrientNetwork</pipeNet>
+						<thingdef>HydroponicNutrientSolution</thingdef>
+						<fuelConsumptionRate>10</fuelConsumptionRate>
+						<exchangeRate>16</exchangeRate>
+						<ticksPerCycle>600</ticksPerCycle>
+						<consumptionPerTick>0.09</consumptionPerTick>
+					</li>
+					-->
+					<li Class="PipeSystem.CompProperties_RefillWithPipes" MayRequire="xmb.ancienthydroponicfarmfacilities.mo">
+						<pipeNet>BreadMo_NutrientNetwork</pipeNet>
+						<thing>HydroponicNutrientSolution</thing>
+						<ratio>1.25</ratio>
+					</li>
+						<!--
+						<li Class="PipeSystem.CompProperties_ResourceTrader">
+							<pipeNet>BreadMo_NutrientNetwork</pipeNet>
+							Amount used per net tick (100 game ticks), if it's negative, it's producing
+							<consumptionPerTick>1</consumptionPerTick>
+						</li>
+						-->
+					<li Class="CompProperties_Refuelable" MayRequire="xmb.ancienthydroponicfarmfacilities.mo">
+						<fuelConsumptionRate>5.1</fuelConsumptionRate>
+						<fuelCapacity>15</fuelCapacity>
+						<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
+						<fuelFilter>
+							<thingDefs>
+								<li>HydroponicNutrientSolution</li>
+							</thingDefs>
+						</fuelFilter>
+						<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+					</li>
+					<li Class="DubsBadHygiene.CompProperties_Pipe" MayRequire="dubwise.dubsbadhygiene">
+						<mode>Sewage</mode>
+					</li>
+					<li Class="CompProperties_Power">
+						<compClass>CompPowerTrader</compClass>
+						<basePowerConsumption>1000</basePowerConsumption>
+						<shortCircuitInRain>false</shortCircuitInRain>
+					</li>
+					<li Class="CompProperties_Flickable"/>
+				</comps>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+</Patch>
