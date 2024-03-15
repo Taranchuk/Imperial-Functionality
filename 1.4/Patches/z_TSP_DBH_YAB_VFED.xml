@@ -178,12 +178,12 @@
 						</li>
 						-->
 					<li Class="CompProperties_Refuelable" MayRequire="xmb.ancienthydroponicfarmfacilities.mo">
-						<fuelConsumptionRate>5.1</fuelConsumptionRate>
+						<fuelConsumptionRate>12</fuelConsumptionRate>
 						<fuelCapacity>15</fuelCapacity>
 						<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
 						<fuelFilter>
 							<thingDefs>
-								<li>HydroponicNutrientSolution</li>
+								<li MayRequire="xmb.ancienthydroponicfarmfacilities.mo">HydroponicNutrientSolution</li>
 							</thingDefs>
 						</fuelFilter>
 						<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>

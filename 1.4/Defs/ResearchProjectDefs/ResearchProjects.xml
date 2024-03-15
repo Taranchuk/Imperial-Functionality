@@ -30,7 +30,7 @@
 		<description>Craft autonomously operated underfarms used by the empire to feed the masses.</description>
 		<baseCost>2000</baseCost>
 		<researchViewX>12.00</researchViewX>
-		<researchViewY>3.25</researchViewY>
+		<researchViewY>4</researchViewY>
 		<prerequisites Inherit="False">
 			<li MayRequire="dubwise.dubsbadhygiene">LargeWaterPumps</li>
 			<li MayRequire="xmb.ancienthydroponicfarmfacilities.mo">AncientHydroponicTechniques</li>
@@ -42,8 +42,8 @@
 		<label>Imperial Techite techniques</label>
 		<description>Contruct techprinters which can be used to generate profitable Imperial Info Techprints when fueled by techite disc stacks.</description>
 		<baseCost>2000</baseCost>
-		<researchViewX>13.00</researchViewX>
-		<researchViewY>4.25</researchViewY>
+		<researchViewX>12.00</researchViewX>
+		<researchViewY>5</researchViewY>
 		<prerequisites Inherit="False">
 			<li>Fabrication</li>
 		</prerequisites>
@@ -54,8 +54,8 @@
 		<label>Advanced Imperial Equipment</label>
 		<description>Craft advanced imperial weapons and armor used for when the empire engages in specialized warfare.</description>
 		<baseCost>2000</baseCost>
-		<researchViewX>14.00</researchViewX>
-		<researchViewY>3.25</researchViewY>
+		<researchViewX>12</researchViewX>
+		<researchViewY>6</researchViewY>
 		<prerequisites>
 			<li MayRequire="ludeon.rimworld.royalty">PoweredArmor</li>
 			<li>VFEE_JanissaryGear</li>
@@ -67,8 +67,8 @@
 		<label>Imperial Surveillance Systems</label>
 		<description>Construct various forms of surveillance systems to deter future raids.</description>
 		<baseCost>2000</baseCost>
-		<researchViewX>12.00</researchViewX>
-		<researchViewY>3.25</researchViewY>
+		<researchViewX>12</researchViewX>
+		<researchViewY>7</researchViewY>
 		<prerequisites>
 			<li>LongRangeMineralScanner</li>
 		</prerequisites>
@@ -80,8 +80,8 @@
 		<description>Tailor high-quality imperial propaganda to enlighten others.</description>
 		<baseCost>250</baseCost>
 		<techLevel>Medieval</techLevel>
-		<researchViewX>16.00</researchViewX>
-		<researchViewY>4.25</researchViewY>
+		<researchViewX>12</researchViewX>
+		<researchViewY>8</researchViewY>
 		<techprintMarketValue>300</techprintMarketValue>
 		<prerequisites Inherit="False">
 			<li MayRequire="oskarpotocki.vfe.empire">VFEE_NobleDecorations</li>
@@ -94,8 +94,8 @@
 		<description>Construct advanced Imperial defenses such as the mighty mega-shield.</description>
 		<baseCost>2000</baseCost>
 		<techLevel>Ultra</techLevel>
-		<researchViewX>15.00</researchViewX>
-		<researchViewY>3.25</researchViewY>
+		<researchViewX>13</researchViewX>
+		<researchViewY>6</researchViewY>
 		<prerequisites Inherit="False">
 			<li>IF_AdvancedImperialEquipment</li>
 			<li MayRequire="ludeon.rimworld.royalty">CataphractArmor</li>

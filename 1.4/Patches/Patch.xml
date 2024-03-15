@@ -323,7 +323,7 @@
 				<li MayRequire="eltwofour.mantodeanrace">MantodeanOrganic</li>
 			</stuffCategories>
 			<costList>
-				<ComponentSpacer>6</ComponentSpacer>
+				<ComponentSpacer>3</ComponentSpacer>
 				<VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">2</VPE_Eltex>
 			</costList>
 		</value>
@@ -416,7 +416,7 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Facility">
 				<maxSimultaneous>999999</maxSimultaneous>
-				<maxDistance>12.9</maxDistance>
+				<maxDistance>75</maxDistance>
 			</li>
 			<li>
 				<compClass>ImperialFunctionality.CompDisplayBank</compClass>
@@ -590,13 +590,15 @@
 			</value>
 		</nomatch>
 	</Operation>
-
+	
+	<!--
 	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Marquess"]</xpath>
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Marquess"]/rewards</xpath>
 		<value>
 			<Techprint_IF_ImperialPropagandaTactics>1</Techprint_IF_ImperialPropagandaTactics>
 		</value>
 	</Operation>
+	-->
 	
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Archduke"]/rewards</xpath>
