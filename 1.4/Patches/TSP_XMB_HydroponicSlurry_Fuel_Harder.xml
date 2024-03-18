@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<!--
+	<Operation Class="PatchOperationConditional">
+	Does this exist?
+		<xpath>/Defs/ThingDef[defName="HydroponicNutrientSolution"]</xpath>
+		If it does, do this replacement.
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef/comps/li/FertilizerUsePerPlantPerCycle</xpath>
+			<value>
+				<FertilizerUsePerPlantPerCycle>0.9</FertilizerUsePerPlantPerCycle>
+			</value>
+		</match>
+		If the first XPATH does not exist, the original code stands.
+	</Operation>
+	-->
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="BreadMo_NutrientDispenser"]/comps/li/fuelCapacity</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="BreadMo_NutrientDispenser"]/comps/li/fuelCapacity</xpath>
+			<value>
+				<fuelCapacity>1000</fuelCapacity>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="BreadMo_NutrientDispenser"]/comps/li/fuelFilter/thingDefs</xpath>
+		<!-- If it does, add this. -->
+		<match Class="PatchOperationAdd">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="BreadMo_NutrientDispenser"]/comps/li/fuelFilter/thingDefs</xpath>
+			<value>
+				<li MayRequire="dubwise.dubsbadhygiene">FecalSludge</li>
+				<li MayRequire="sumika.nanohana">PlantOil</li>
+				<li MayRequire="vanillaexpanded.recycling">VRecyclingE_Trash</li>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="NutrientSolutionFermenter"]/comps/li/fuelFilter/thingDefs</xpath>
+		<!-- If it does, add this. -->
+		<match Class="PatchOperationAdd">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="NutrientSolutionFermenter"]/comps/li/fuelFilter/thingDefs</xpath>
+			<value>
+				<li MayRequire="dubwise.dubsbadhygiene">FecalSludge</li>
+				<li MayRequire="sumika.nanohana">PlantOil</li>
+				<li MayRequire="vanillaexpanded.recycling">VRecyclingE_Trash</li>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="NutrientSolutionFermenter"]/comps/li/fuelFilter/categories</xpath>
+		<!-- If it does, add this. -->
+		<match Class="PatchOperationAdd">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="NutrientSolutionFermenter"]/comps/li/fuelFilter/categories</xpath>
+			<value>
+				<li>Foods</li>
+			</value>
+		</match>
+		<!-- If it DOES NOT, add this instead. -->
+		<nomatch Class="PatchOperationAdd">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="NutrientSolutionFermenter"]/comps/li/fuelFilter</xpath>
+			<value>
+				<categories>
+					<li>Foods</li>
+				</categories>
+			</value>
+		</nomatch>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="BreadMo_NutrientDrain"]/building/fixedStorageSettings</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="BreadMo_NutrientDrain"]/building/fixedStorageSettings</xpath>
+			<value>
+				<fixedStorageSettings>
+					<filter>
+						<disallowNotEverStorable>false</disallowNotEverStorable>
+						<categories>
+							<li>Foods</li>
+							<li MayRequire="dubwise.dubsbadhygiene">Waste</li>
+						</categories>
+						<thingDefs>
+							<li>HydroponicNutrientSolution</li>
+							<li>NutrientPaste</li>
+							<li MayRequire="vanillaexpanded.recycling">VRecyclingE_Trash</li>
+							<li MayRequire="dubwise.dubsbadhygiene">FecalSludge</li>
+							<li MayRequire="sumika.nanohana">PlantOil</li>
+						</thingDefs>
+						<disallowedThingDefs>
+							<li>Chemfuel</li>
+						</disallowedThingDefs>
+					</filter>
+				</fixedStorageSettings>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="BreadMo_NutrientDrain"]/building/defaultStorageSettings</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="BreadMo_NutrientDrain"]/building/defaultStorageSettings</xpath>
+			<value>
+				<defaultStorageSettings>
+					<filter>
+						<priority>Critical</priority>
+						<disallowNotEverStorable>false</disallowNotEverStorable>
+						<categories>
+							<!-- <li>Foods</li> --> <!-- Not by default -->
+						</categories>
+						<thingDefs>
+							<li>HydroponicNutrientSolution</li>
+							<li MayRequire="sumika.nanohana">PlantOil</li>
+							<li MayRequire="vanillaexpanded.recycling">VRecyclingE_Trash</li>
+						</thingDefs>
+						<disallowedThingDefs>
+							<li>Chemfuel</li>
+							<li>InsectJelly</li>
+							<li>MealLavish</li>
+							<li>MealLavish_Veg</li>
+							<li>MealLavish_Meat</li>
+							<li>Chocolate</li>
+							<li MayRequire="Ludeon.Rimworld.Biotech">HemogenPack</li>
+						</disallowedThingDefs>
+					</filter>
+				</defaultStorageSettings>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+</Patch>

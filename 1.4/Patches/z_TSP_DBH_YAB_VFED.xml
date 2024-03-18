@@ -124,7 +124,7 @@
 					<li Class="DubsBadHygiene.CompProperties_SepticTank" MayRequire="dubwise.dubsbadhygiene">
 						<compClass>DubsBadHygiene.CompSewageTreatment</compClass>
 						<TreatedPerDay>100</TreatedPerDay>
-						<capacity>20000</capacity>
+						<capacity>10000</capacity>
 						<priority>2</priority>
 					</li>
 					<li Class="DubsBadHygiene.CompProperties_Blockage" MayRequire="dubwise.dubsbadhygiene"></li>
@@ -184,6 +184,7 @@
 						<fuelFilter>
 							<thingDefs>
 								<li MayRequire="xmb.ancienthydroponicfarmfacilities.mo">HydroponicNutrientSolution</li>
+								<li>NutrientPaste</li>
 							</thingDefs>
 						</fuelFilter>
 						<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
@@ -196,7 +197,7 @@
 						<basePowerConsumption>1000</basePowerConsumption>
 						<shortCircuitInRain>false</shortCircuitInRain>
 					</li>
-					<li Class="CompProperties_Flickable"/>
+					<li Class="CompProperties_Flickable"></li>
 				</comps>
 			</value>
 		</match>

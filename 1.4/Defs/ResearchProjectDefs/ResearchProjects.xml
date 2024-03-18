@@ -12,7 +12,7 @@
 		<tab>VanillaExpanded</tab>
 		<techLevel>Spacer</techLevel>
 		<techprintCount>1</techprintCount>
-		<techprintCommonality>2</techprintCommonality>
+		<techprintCommonality>1.5</techprintCommonality>
 		<techprintMarketValue>2000</techprintMarketValue>
 		<heldByFactionCategoryTags>
 			<li>Empire</li>
@@ -28,13 +28,18 @@
 		<defName>IF_ImperialFarmingTechniques</defName>
 		<label>Imperial Farming techniques</label>
 		<description>Craft autonomously operated underfarms used by the empire to feed the masses.</description>
-		<baseCost>2000</baseCost>
+		<baseCost>500</baseCost>
 		<researchViewX>12.00</researchViewX>
 		<researchViewY>4</researchViewY>
+		<!-- This already exists in RL! - https://www.futurefarming.com/smart-farming/australia-gets-its-first-fully-automated-commercial-farm/ -->
+		<techlevel>Spacer</techlevel>
 		<prerequisites Inherit="False">
+			<li MayRequire="dubwise.dubsbadhygiene">Irrigation</li>
 			<li MayRequire="dubwise.dubsbadhygiene">LargeWaterPumps</li>
 			<li MayRequire="xmb.ancienthydroponicfarmfacilities.mo">AncientHydroponicTechniques</li>
+			<li>Hydroponics</li>
 		</prerequisites>
+		<requiredResearchBuilding IsNull="True"></requiredResearchBuilding>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="IF_ImperialTech">
@@ -77,7 +82,7 @@
 	<ResearchProjectDef ParentName="IF_ImperialTech">
 		<defName>IF_ImperialPropagandaTactics</defName>
 		<label>Imperial Propaganda tactics</label>
-		<description>Tailor high-quality imperial propaganda to enlighten others.</description>
+		<description>Disseminate high-quality imperial propaganda to enlighten others.</description>
 		<baseCost>250</baseCost>
 		<techLevel>Medieval</techLevel>
 		<researchViewX>12</researchViewX>
@@ -85,6 +90,8 @@
 		<techprintMarketValue>300</techprintMarketValue>
 		<prerequisites Inherit="False">
 			<li MayRequire="oskarpotocki.vfe.empire">VFEE_NobleDecorations</li>
+			<!-- <li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li> -->
+			<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
 		</prerequisites>
 	</ResearchProjectDef>
 	
@@ -98,6 +105,7 @@
 		<researchViewY>6</researchViewY>
 		<prerequisites Inherit="False">
 			<li>IF_AdvancedImperialEquipment</li>
+			<li>Fabrication</li>
 			<li MayRequire="ludeon.rimworld.royalty">CataphractArmor</li>
 		</prerequisites>
 	</ResearchProjectDef>

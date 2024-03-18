@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Patch>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
+<Patch>
 	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/ThingDef[defName="VFED_WaterMain" or defName="VFED_ImperialUnderfarm"]/costList</xpath>
 	</Operation>
@@ -30,6 +30,7 @@
 			<researchPrerequisites>
 				<li>IF_ImperialFarmingTechniques</li>
 				<li MayRequire="dubwise.dubsbadhygiene">LargeWaterPumps</li>
+				<li MayRequire="dubwise.dubsbadhygiene">Irrigation</li>
 			</researchPrerequisites>
 			<comps>
 				<li Class="CompProperties_Power">
@@ -52,6 +53,7 @@
 			<designationCategory>IF_ImperialTech</designationCategory>
 			<researchPrerequisites>
 				<li>IF_ImperialFarmingTechniques</li>
+				<li MayRequire="dubwise.dubsbadhygiene">Irrigation</li>
 			</researchPrerequisites>
 			<tickerType>Normal</tickerType>
 			<costStuffCount>800</costStuffCount>
@@ -689,5 +691,42 @@
 			</li>
 		</value>
 	</Operation>
+
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="Knight"]/grantedAbilities</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="Knight"]</xpath>
+			<success>Always</success>
+			<value>
+				<grantedAbilities></grantedAbilities>
+			</value>
+		</nomatch>
+	</Operation>
 	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="Knight"]/grantedAbilities</xpath>
+		<value>
+			<li>IF_RoyalInvitation</li>
+		</value>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_HighStellarch"]/grantedAbilities</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="VFEE_HighStellarch"]</xpath>
+			<success>Always</success>
+			<value>
+				<grantedAbilities></grantedAbilities>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_HighStellarch"]/grantedAbilities</xpath>
+		<value>
+			<li>IF_FormEmpireAlliance</li>
+		</value>
+	</Operation>
 </Patch>
