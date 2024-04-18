@@ -21,7 +21,7 @@ namespace ImperialFunctionality
                     {
                         return false;
                     }
-                    if (ModCompatibility.HasPipeCompAndIsEmpty(parent))
+                    if (ModCompatibility.DubsBadHygieneActive && ModCompatibility.HasPipeCompAndIsEmpty(parent))
                     {
                         return false;
                     }
@@ -43,7 +43,7 @@ namespace ImperialFunctionality
                     {
                         continue;
                     }
-                    if (ModCompatibility.HasPipeCompAndIsEmpty(waterMain))
+                    if (ModCompatibility.DubsBadHygieneActive && ModCompatibility.HasPipeCompAndIsEmpty(waterMain))
                     {
                         continue;
                     }
