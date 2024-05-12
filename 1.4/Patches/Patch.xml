@@ -118,21 +118,21 @@
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Refuelable">
-				<fuelLabel>Techie disc stack</fuelLabel>
-				<fuelGizmoLabel>Techie disc stacks</fuelGizmoLabel>
-				<outOfFuelMessage>No techie disc stacks</outOfFuelMessage>
+				<fuelLabel>Techite disc stack</fuelLabel>
+				<fuelGizmoLabel>Techite disc stacks</fuelGizmoLabel>
+				<outOfFuelMessage>No techite disc stacks</outOfFuelMessage>
 				<fuelFilter>
 					<thingDefs>
 						<li>VFED_TechiteDiscStack</li>
 					</thingDefs>
 				</fuelFilter>
-				<fuelCapacity>1</fuelCapacity>
+				<fuelCapacity>5</fuelCapacity>
 				<fuelMultiplier>1</fuelMultiplier>
-				<initialFuelPercent>0</initialFuelPercent>
-				<autoRefuelPercent>0.5</autoRefuelPercent>
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
 				<minimumFueledThreshold>1</minimumFueledThreshold>
-				<factorByDifficulty>true</factorByDifficulty>
+				<factorByDifficulty>false</factorByDifficulty>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<fuelIconPath>Structures/Misc/TechiteDiscStack</fuelIconPath>
 			</li>

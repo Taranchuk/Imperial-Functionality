@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<Patch>
+<Defs>
 	<RecipeDef Name="TSP_IF_VFED_USAMainstreamMedia_Propagandizing" Abstract="True">
 		<!-- <defName>TSP_IF_VFED_USAMainstreamMedia_Propagandizing_Base</defName> -->
 		<allowMixingIngredients>true</allowMixingIngredients>
@@ -403,4 +403,4 @@
 			<li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li>
 		</researchPrerequisites>
 	</RecipeDef>
-</Patch>
+</Defs>
