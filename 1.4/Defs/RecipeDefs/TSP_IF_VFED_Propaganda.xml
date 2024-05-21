@@ -5,7 +5,6 @@
 		<!-- <defName>TSP_IF_VFED_USAMainstreamMedia_Propagandizing_Base</defName> -->
 		<allowMixingIngredients>true</allowMixingIngredients>
 		<dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
-		<workSkill>Social</workSkill>
 		<workSkillLearnFactor>4</workSkillLearnFactor>
 		<soundWorking>Recipe_Tailor</soundWorking>
 		<description>As a member of the Empire, you can please your liege by compiling Imperial Propaganda to spread to the unwashed masses. Unlike the demoralizing propaganda dropped to sow dissent among Deserters, this form of Imperial Propaganda is hand crafted by an august royal with the wholesome intent of winning over friends and allies.</description>
