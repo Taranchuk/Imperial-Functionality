@@ -1,21 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<WorkGiverDef>
-		<defName>VFED_SurveillanceStationScan</defName>
-		<label>operate surveillance console</label>
-		<giverClass>WorkGiver_OperateScanner</giverClass>
-		<workType>Warden</workType>
-		<priorityInType>250</priorityInType>
-		<verb>Search for Raiders</verb>
-		<gerund>cucking Raiders at</gerund>
-		<scannerDef>VFED_SurveillanceStation</scannerDef>
-		<requiredCapacities>
-			<li>Sight</li>
-		</requiredCapacities>
-		<nonColonistsCanDo>false</nonColonistsCanDo>
-		<canBeDoneByMechs>true</canBeDoneByMechs>
-		<billGiversAllMechanoids>true</billGiversAllMechanoids>
-		<canBeDoneWhileDrafted>true</canBeDoneWhileDrafted>
-		<!-- <emergency>true</emergency> --> <!-- This should be a priority! -->
-	</WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>VFED_SurveillanceStationScan</defName>
+    <label>operate surveillance console</label>
+    <giverClass>WorkGiver_OperateScanner</giverClass>
+    <workType>Research</workType>
+    <priorityInType>50</priorityInType>
+    <verb>scan</verb>
+    <gerund>scanning at</gerund>
+    <scannerDef>VFED_SurveillanceStation</scannerDef>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+
 </Defs>

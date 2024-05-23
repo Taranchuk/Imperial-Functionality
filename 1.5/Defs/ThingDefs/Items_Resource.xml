@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <Defs>
+
 	<ThingDef ParentName="ResourceBase">
 		<defName>IF_ImperialInfo</defName>
 		<label>Imperial info techprint</label>
-		<description>Freshly-compiled Imperial data, logs, and writings. These can contain anything ranging from the smallest of details, such as a count taking out his dog for a walk, all the way to a knight preparing for an ambush.</description>
+		<description>Freshly-compiled imperial data ranging from the smallest of details such as a count taking out his dog for a walk all the way to a knight preparing for an ambush.</description>
 		<graphicData>
 			<texPath>Things/Item/Special/TechprintUltratech</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Metal_Drop</soundDrop>
+		<soundDrop>Standard_Drop</soundDrop>
 		<stackLimit>50</stackLimit>
 		<healthAffectsPrice>false</healthAffectsPrice>
 		<statBases>
@@ -18,48 +18,22 @@
 			<MarketValue>2000</MarketValue>
 			<Mass>0.03</Mass>
 			<Flammability>1</Flammability>
-			<RoyalFavorValue Inherit="False">0</RoyalFavorValue> <!-- The Empire cannot buy its own propaganda! -->
 		</statBases>
 		<thingCategories>
 			<li>ItemsMisc</li>
 		</thingCategories>
-		<tradeTags>
-			<li>ExoticMisc</li>
-			<li>TSP_IF_UniversalBuyTag</li>
-		</tradeTags>
 	</ThingDef>
 	
 	<ThingDef ParentName="ResourceBase">
 		<defName>IF_ImperialPropaganda</defName>
 		<label>imperial propaganda</label>
-		<description>Compiled flyers and papers dictating in many exciting and convincing ways how fealty to the Empire is the way to go. Unlike the demoralizing propaganda weaponized against Deserters, these flyers are intended to convince and win over potential allies.</description>
-		<descriptionHyperlinks>
-			<thingDef>IF_ImperialPropaganda</thingDef>
-			<thingDef>VFED_Filth_Propaganda</thingDef>
-		</descriptionHyperlinks>
+		<description>Compiled flyers and papers dictating in many questionable and convincing ways how the Empire is the way to go.</description>
 		<thingClass>ImperialFunctionality.ImperialPropaganda</thingClass>
-		<soundInteract>Standard_Drop</soundInteract>
+		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Standard_Drop</soundDrop>
-		<stackLimit>25</stackLimit>
+		<stackLimit>50</stackLimit>
 		<drawerType>RealtimeOnly</drawerType>
-		<graphicData>
-			<texPath>Things/Filth/PropagandaFilth</texPath>
-			<graphicClass>Graphic_Random</graphicClass>
-			<shaderType>Transparent</shaderType>
-		</graphicData>
-		<statBases>
-			<MaxHitPoints>300</MaxHitPoints>
-			<MarketValue>250</MarketValue>
-			<Mass>0.0089</Mass>
-			<Flammability>1</Flammability>
-			<Beauty>0</Beauty>
-			<Cleanliness>0</Cleanliness>
-			<RoyalFavorValue Inherit="False">0</RoyalFavorValue> <!-- The Empire cannot buy its own propaganda! -->
-		</statBases>
 		<healthAffectsPrice>false</healthAffectsPrice>
-		<selectable>true</selectable>
-		<tradeability>Sellable</tradeability>
-		<!--
 		<recipeMaker Inherit="False">
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 			<workSkill>Crafting</workSkill>
@@ -81,14 +55,23 @@
 			<Silver>10</Silver>
 			<Cloth>100</Cloth>
 		</costList>
-		-->
+		<tradeability>None</tradeability>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>250</MarketValue>
+			<Mass>0.03</Mass>
+			<Flammability>1</Flammability>
+			<Beauty>-10</Beauty>
+			<Cleanliness>-5</Cleanliness>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Filth/PropagandaFilth</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<shaderType>Transparent</shaderType>
+		</graphicData>
 		<thingCategories>
 			<li>ItemsMisc</li>
 		</thingCategories>
-		<tradeTags>
-			<li>Royal</li>
-			<li>ExoticMisc</li>
-			<li>TSP_IF_UniversalBuyTag</li>
-		</tradeTags>
 	</ThingDef>
+
 </Defs>
