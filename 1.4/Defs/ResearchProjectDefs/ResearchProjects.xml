@@ -32,7 +32,7 @@
 		<researchViewX>12.00</researchViewX>
 		<researchViewY>4</researchViewY>
 		<!-- This already exists in RL! - https://www.futurefarming.com/smart-farming/australia-gets-its-first-fully-automated-commercial-farm/ -->
-		<techlevel>Spacer</techlevel>
+		<techLevel>Industrial</techLevel>
 		<prerequisites Inherit="False">
 			<li MayRequire="dubwise.dubsbadhygiene">Irrigation</li>
 			<li MayRequire="dubwise.dubsbadhygiene">LargeWaterPumps</li>

@@ -11,7 +11,7 @@
 		<iconPath>World/WorldObjects/Expanding/Empire</iconPath>
 		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-		<cooldownTicksRange>999999999999999</cooldownTicksRange> <!-- Can only be done once -->
+		<cooldownTicksRange>9999999</cooldownTicksRange> <!-- Can only be done once -->
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<warmupTime>0</warmupTime>
