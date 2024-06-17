@@ -147,7 +147,7 @@
 			<value>
 				<fixedIngredientFilter Inherit="Flase">
 					<categories Inherit="False">
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 				</fixedIngredientFilter>
 			</value>
@@ -165,7 +165,7 @@
 			<value>
 				<defaultIngredientFilter Inherit="False">
 					<categories Inherit="False">
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 				</defaultIngredientFilter>
 			</value>

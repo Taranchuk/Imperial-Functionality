@@ -20,7 +20,7 @@
 		<fixedIngredientFilter>
 			<categories>
 				<li>Textiles</li>
-				<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+				<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 			</categories>
 			<thingDefs>
 				<li>Cloth</li>
@@ -29,7 +29,7 @@
 		<defaultIngredientFilter>
 			<categories>
 				<li>Textiles</li>
-				<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+				<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 			</categories>
 			<thingDefs>
 				<li>Cloth</li>
@@ -47,7 +47,7 @@
 		<researchPrerequisites Inherit="False">
 			<li>IF_ImperialPropagandaTactics</li>
 			<!-- <li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li> -->
-			<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 		</researchPrerequisites>
 	</RecipeDef>
 	
@@ -64,7 +64,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -91,7 +91,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -118,7 +118,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -145,7 +145,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -172,7 +172,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -199,7 +199,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -230,7 +230,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -261,7 +261,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -292,7 +292,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -323,7 +323,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -354,7 +354,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
@@ -385,7 +385,7 @@
 				<filter>
 					<categories>
 						<li>Textiles</li>
-						<li MayRequire="mlie.rimwriter">RimWriter_BookMaterials</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
 					</categories>
 					<thingDefs>
 						<li>Cloth</li>
