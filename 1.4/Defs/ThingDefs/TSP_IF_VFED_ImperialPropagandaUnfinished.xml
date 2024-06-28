@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<ThingDef ParentName="UnfinishedBase">
+		<defName>TSP_IF_VFED_ImperialPropaganda_InProgress</defName>
+		<label>unfinished Imperial Propaganda</label>
+		<description>Imperial Propaganda in the process of being written by a nobleman of the Shattered Empire. It is not complete and therefore is not ready for dissemination.</description>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/PropagandaFilth/TSP_IF_Propadanda_Unfinished</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<selectable>true</selectable>
+		<stuffCategories Inherit="False"></stuffCategories> <!-- Prevents errors -->
+	</ThingDef>
+</Defs>

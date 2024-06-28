@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Defs>
 
+<Defs>
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
     <defName>IF_TechiteDiscStackDrop</defName>
     <label>Techite disc stack drop</label>
-    <description>Call for a drop of Techite disc stacks.</description>
+    <description>Call for a drop of Techite Disk Stacks.</description>
 	<workerClass>ImperialFunctionality.RoyalTitlePermitWorker_DropResources_RandomAmount</workerClass>
     <minTitle>Duke</minTitle>
     <faction>Empire</faction>
@@ -12,7 +12,7 @@
     <uiPosition>(1,4)</uiPosition>
     <royalAid>
       <itemsToDrop>
-        <VFED_TechiteDiscStack>3</VFED_TechiteDiscStack>
+        <VFED_TechiteDiscStack>5</VFED_TechiteDiscStack>
       </itemsToDrop>
       <favorCost>8</favorCost>
     </royalAid>
@@ -22,19 +22,17 @@
    <RoyalTitlePermitDef ParentName="DropResourcesBase">
     <defName>IF_AperitifDrop</defName>
     <label>Aperitif drop</label>
-    <description>Call for a drop of 10 Aperitif.</description>
+    <description>Call for a drop of thirty jugs of Aperitif.</description>
     <minTitle>Knight</minTitle>
     <faction>Empire</faction>
     <permitPointCost>1</permitPointCost>
     <uiPosition>(2,4)</uiPosition>
     <royalAid>
       <itemsToDrop>
-        <VFEE_Aperitif>10</VFEE_Aperitif>
+        <VFEE_Aperitif>30</VFEE_Aperitif>
       </itemsToDrop>
-      <favorCost>4</favorCost>
+      <favorCost>1</favorCost>
     </royalAid>
-    <cooldownDays>15</cooldownDays>
+    <cooldownDays>10</cooldownDays>
   </RoyalTitlePermitDef>
-
- 
 </Defs>

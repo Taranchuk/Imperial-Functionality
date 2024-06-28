@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="IF_ImperialPropaganda"]</xpath>
+		<!-- If it does, add this. -->
+		<match Class="PatchOperationAdd">
+			<success>Always</success>
+			<xpath>/Defs/TraderKindDef/stockGenerators</xpath>
+			<value>
+				<li Class="StockGenerator_BuyTradeTag">
+					<tag>TSP_IF_UniversalBuyTag</tag>
+				</li>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]/description</xpath>
+		<!-- If it DOES NOT, add this. -->
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]</xpath>
+			<success>Always</success>
+			<value>
+				<description>Mass produced Imperial Propaganda. Unlike the more advanced propaganda hand-written by noblemen to genuinely convince potential allies, this propaganda is meant to demoralize and sow dissent within communities of Deserters, and other groups that the Empire does not like.</description>
+				<descriptionHyperlinks>
+					<thingDef>IF_ImperialPropaganda</thingDef>
+				</descriptionHyperlinks>
+			</value>
+		</nomatch>
+		<!-- If it does, do this replacement instead. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]/description</xpath>
+			<value>
+				<description>Mass produced Imperial Propaganda. Unlike the more advanced propaganda hand-written by noblemen to genuinely convince potential allies, this propaganda is meant to demoralize and sow dissent within communities of Deserters, and other groups that the Empire does not like.</description>
+				<descriptionHyperlinks>
+					<thingDef>IF_ImperialPropaganda</thingDef>
+				</descriptionHyperlinks>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]/descriptionHyperlinks</xpath>
+		<!-- If it DOES NOT, add this. -->
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]</xpath>
+			<success>Always</success>
+			<value>
+				<descriptionHyperlinks>
+					<thingDef>IF_ImperialPropaganda</thingDef>
+				</descriptionHyperlinks>
+			</value>
+		</nomatch>
+		<!-- If it does, add this instead. -->
+		<match Class="PatchOperationAdd">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]/descriptionHyperlinks</xpath>
+			<value>
+				<thingDef>IF_ImperialPropaganda</thingDef>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+		<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]/selectable</xpath>
+		<!-- If it DOES NOT, add this. -->
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]</xpath>
+			<success>Always</success>
+			<value>
+				<selectable>true</selectable>
+			</value>
+		</nomatch>
+		<!-- If it does, do this replacement instead. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]/selectable</xpath>
+			<value>
+				<selectable>true</selectable>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+	<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[defName="VFED_Filth_Propaganda"]/label</xpath>
+			<value>
+				<label>Imperial Propaganda (demoralizing)</label>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+	<xpath>/Defs/ThingDef[defName="Jecrell_Book"]</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/ThingDef[@Name="TSP_IF_VFED_USAMainstreamMedia_Propagandizing"]/soundWorking</xpath>
+			<value>
+				<soundWorking>RimWriter_SoundManualTypewriter</soundWorking>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+	<xpath>/Defs/ThingDef[defName="Jecrell_Book"]</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/RecipeDef[@Name="TSP_IF_VFED_USAMainstreamMedia_Propagandizing"]/recipeUsers</xpath>
+			<value>
+				<recipeUsers Inherit="False">
+					<li MayRequire="mlie.rimwriter">RimWriter_TableTypewriter</li>
+					<li MayRequire="mlie.rimwriter">RimWriter_PapermakingBench</li>
+					<li MayRequire="mlie.rimwriter">RimWriter_PapermakingBenchElectric</li>
+				</recipeUsers>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+	<xpath>/Defs/ThingDef[defName="Jecrell_Book"]</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/RecipeDef[@Name="TSP_IF_VFED_USAMainstreamMedia_Propagandizing"]/fixedIngredientFilter</xpath>
+			<value>
+				<fixedIngredientFilter Inherit="Flase">
+					<categories Inherit="False">
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+				</fixedIngredientFilter>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- Does this exist? -->
+	<xpath>/Defs/ThingDef[defName="Jecrell_Book"]</xpath>
+		<!-- If it does, do this replacement. -->
+		<match Class="PatchOperationReplace">
+			<success>Always</success>
+			<xpath>/Defs/RecipeDef[@Name="TSP_IF_VFED_USAMainstreamMedia_Propagandizing"]/defaultIngredientFilter</xpath>
+			<value>
+				<defaultIngredientFilter Inherit="False">
+					<categories Inherit="False">
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+				</defaultIngredientFilter>
+			</value>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- DO THE GENTILES KNOW? -->
+	<xpath>/Defs/ThingDef[defName="Jecrell_Book"]</xpath>
+		<!-- If they do, SHUT IT DOWN. -->
+		<match Class="PatchOperationRemove">
+			<success>Always</success>
+			<xpath>/Defs/RecipeDef[@Name="TSP_IF_VFED_USAMainstreamMedia_Propagandizing"]/dontShowIfAnyIngredientMissing</xpath>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. All according to plan. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- DO THE GENTILES KNOW? -->
+	<xpath>/Defs/ThingDef[defName="Jecrell_Book"]</xpath>
+		<!-- If they do, SHUT IT DOWN. -->
+		<match Class="PatchOperationRemove">
+			<success>Always</success>
+			<xpath>/Defs/RecipeDef[defName = "TSP_IF_VFED_ImperialPropaganda" or defName = "TSP_IF_VFED_ImperialPropaganda_ABC" or defName = "TSP_IF_VFED_ImperialPropaganda_CNN" or defName = "TSP_IF_VFED_ImperialPropaganda_NewYorkTimes" or defName = "TSP_IF_VFED_ImperialPropaganda_MSNBC" or defName = "TSP_IF_VFED_ImperialPropaganda_TheView" or defName = "TSP_IF_VFED_ImperialPropaganda_NationStatesGeneral" or defName = "TSP_IF_VFED_ImperialPropaganda_Imgur" or defName = "TSP_IF_VFED_ImperialPropaganda_Tumblr" or defName = "TSP_IF_VFED_ImperialPropaganda_Twitter" or defName = "TSP_IF_VFED_ImperialPropaganda_Tiktok" or defName = "TSP_IF_VFED_ImperialPropaganda_Democrats"]/ingredients/li/filter/categories/li[text()="Textiles"]</xpath>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. All according to plan -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- DO THE GENTILES KNOW? -->
+	<xpath>/Defs/ThingDef[defName="Jecrell_Book"]</xpath>
+		<!-- If they do, SHUT IT DOWN. -->
+		<match Class="PatchOperationRemove">
+			<success>Always</success>
+			<xpath>/Defs/RecipeDef[defName = "TSP_IF_VFED_ImperialPropaganda" or defName = "TSP_IF_VFED_ImperialPropaganda_ABC" or defName = "TSP_IF_VFED_ImperialPropaganda_CNN" or defName = "TSP_IF_VFED_ImperialPropaganda_NewYorkTimes" or defName = "TSP_IF_VFED_ImperialPropaganda_MSNBC" or defName = "TSP_IF_VFED_ImperialPropaganda_TheView" or defName = "TSP_IF_VFED_ImperialPropaganda_NationStatesGeneral" or defName = "TSP_IF_VFED_ImperialPropaganda_Imgur" or defName = "TSP_IF_VFED_ImperialPropaganda_Tumblr" or defName = "TSP_IF_VFED_ImperialPropaganda_Twitter" or defName = "TSP_IF_VFED_ImperialPropaganda_Tiktok" or defName = "TSP_IF_VFED_ImperialPropaganda_Democrats"]/ingredients/li/filter/thingDefs/li[text()="Cloth"]</xpath>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- DO THE GENTILES KNOW? -->
+	<xpath>/Defs/ThingDef[defName="Jecrell_Book"]</xpath>
+		<!-- If they do, SHUT IT DOWN. -->
+		<match Class="PatchOperationRemove">
+			<success>Always</success>
+			<xpath>/Defs/RecipeDef[@Name="TSP_IF_VFED_USAMainstreamMedia_Propagandizing"]/ingredients/li/filter/categories/li[text()="Textiles"]</xpath>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. All according to plan -->
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+	<!-- DO THE GENTILES KNOW? -->
+	<xpath>/Defs/ThingDef[defName="Jecrell_Book"]</xpath>
+		<!-- If they do, SHUT IT DOWN. -->
+		<match Class="PatchOperationRemove">
+			<success>Always</success>
+			<xpath>/Defs/RecipeDef[@Name="TSP_IF_VFED_USAMainstreamMedia_Propagandizing"]/ingredients/li/filter/thingDefs/li[text()="Cloth"]</xpath>
+		</match>
+		<!-- If the first XPATH does not exist, the original code stands. -->
+	</Operation>
+</Patch>
