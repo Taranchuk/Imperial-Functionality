@@ -14,7 +14,7 @@ namespace ImperialFunctionality
         public override bool TestRunInt(Slate slate)
         {
             var map = slate.Get<Map>("map");
-            return map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer).Any(x => x.royalty.HasAnyTitleIn(Faction.OfEmpire));
+            return map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer).Any(x => x.royalty != null && x.royalty.HasAnyTitleIn(Faction.OfEmpire));
         }
     }
 }
