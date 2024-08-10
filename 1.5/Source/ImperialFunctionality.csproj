@@ -83,6 +83,7 @@
     <Compile Include="CompSurveillancePillar_Trigger_Patch.cs" />
     <Compile Include="CompSurveillanceScanner.cs" />
     <Compile Include="CompTechprintSpawner.cs" />
+    <Compile Include="CompTogglePillarSonarEffect.cs" />
     <Compile Include="CompUnderfarmSpawner.cs" />
     <Compile Include="FactionDialogMaker_FactionDialogFor_Patch.cs" />
     <Compile Include="FactionGiftUtility_GetBaseGoodwillChange_Patch.cs" />

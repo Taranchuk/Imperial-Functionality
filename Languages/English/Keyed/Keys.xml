@@ -13,4 +13,5 @@
 	<IF.InactiveNoMatchingSurvelliancePillar>Inactive: no matching surveillance pillar.</IF.InactiveNoMatchingSurvelliancePillar>
 	<IF.ActiveDisplayBanks>Active display banks: {0}</IF.ActiveDisplayBanks>
 	<IF.Active>Active: receiving data from surveliance pillar.</IF.Active>
+	<IF.ToggleVisuals>Toggle Visuals</IF.ToggleVisuals>
 </LanguageData>

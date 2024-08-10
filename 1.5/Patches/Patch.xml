@@ -280,9 +280,31 @@
 		<xpath>Defs/ThingDef[defName="VFED_SurveillancePillar"]/comps</xpath>
 		<value>
 			<li Class="CompProperties_Flickable"/>
+			<li>
+				<compClass>ImperialFunctionality.CompTogglePillarSonarEffect</compClass>
+			</li>
 		</value>
 	</Operation>
 
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs</xpath>
+		<value>
+			<ThingDef ParentName="MoteBase">
+				<defName>IF_MoteInvisible</defName>
+				<mote>
+					<fadeInTime>0.1</fadeInTime>
+					<solidTime>999999999</solidTime>
+					<fadeOutTime>0.5</fadeOutTime>
+					<needsMaintenance>True</needsMaintenance>
+				</mote>
+				<drawOffscreen>true</drawOffscreen>
+				<graphicData>
+					<texPath>Things/Mote/Transparent</texPath> <!-- Invisible -->
+				</graphicData>
+			</ThingDef>
+		</value>
+	</Operation>
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="VFED_SurveillancePillar"]/building</xpath>
 		<value>
