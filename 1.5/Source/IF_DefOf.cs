@@ -14,5 +14,6 @@ namespace ImperialFunctionality
         public static QuestScriptDef VFEE_GrandBall, VFEE_ArtExhibit;
         public static AbilityDef IF_FormEmpireAlliance, IF_RoyalInvitation;
         public static RoyalTitleDef VFEE_Despot, VFEE_Archduke;
+        public static ThingDef IF_MoteInvisible;
     }
 }
