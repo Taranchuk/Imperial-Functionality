@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<RecipeDef Name="TSP_IF_VFED_USAMainstreamMedia_Propagandizing" Abstract="True">
+		<!-- <defName>TSP_IF_VFED_USAMainstreamMedia_Propagandizing_Base</defName> -->
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
+		<workSkillLearnFactor>4</workSkillLearnFactor>
+		<soundWorking>Recipe_Tailor</soundWorking>
+		<description>As a member of the Empire, you can please your liege by compiling Imperial Propaganda to spread to the unwashed masses. Unlike the demoralizing propaganda dropped to sow dissent among Deserters, this form of Imperial Propaganda is hand crafted by an august royal with the wholesome intent of winning over friends and allies.</description>
+		<workSpeedStat>NegotiationAbility</workSpeedStat>
+		<descriptionHyperlinks>
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<jobString>Propagandizing</jobString>
+		<unfinishedThingDef Inherit="False">TSP_IF_VFED_ImperialPropaganda_InProgress</unfinishedThingDef>
+		<requiredGiverWorkType>Art</requiredGiverWorkType>
+		<workSkill>Social</workSkill>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Textiles</li>
+				<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+			</categories>
+			<thingDefs>
+				<li>Cloth</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>Textiles</li>
+				<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+			</categories>
+			<thingDefs>
+				<li>Cloth</li>
+			</thingDefs>
+		</defaultIngredientFilter>
+		<recipeUsers Inherit="False">
+			<li>CraftingSpot</li>
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+			<li MayRequire="vanillaexpanded.vbrewe">VBE_Bar</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TableTypewriter</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_PapermakingBench</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_PapermakingBenchElectric</li>
+		</recipeUsers>
+		<researchPrerequisites Inherit="False">
+			<li>IF_ImperialPropagandaTactics</li>
+			<!-- <li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li> -->
+			<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda</defName>
+		<label>Write Imperial Propaganda</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>2000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>1</IF_ImperialPropaganda>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_ABC</defName>
+		<label>Write Imperial Propaganda (x5)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>2500</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>200</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>5</IF_ImperialPropaganda>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_CNN</defName>
+		<label>Write Imperial Propaganda (x10)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>3000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>300</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>5</IF_ImperialPropaganda>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_NewYorkTimes</defName>
+		<label>Write Imperial Propaganda (x15)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>3500</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>400</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>15</IF_ImperialPropaganda>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_MSNBC</defName>
+		<label>Write Imperial Propaganda (x20)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>4000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>500</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>20</IF_ImperialPropaganda>
+		</products>
+		<researchPrerequisites Inherit="False">
+			<li>IF_ImperialPropagandaTactics</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_TheView</defName>
+		<label>Write Imperial Propaganda (x25)</label>
+		<workAmount>4500</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>600</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>25</IF_ImperialPropaganda>
+		</products>
+		<researchPrerequisites Inherit="False">
+			<li>IF_ImperialPropagandaTactics</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_NationStatesGeneral</defName>
+		<label>Write Imperial Propaganda (x30)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>5000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>700</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>30</IF_ImperialPropaganda>
+		</products>
+		<researchPrerequisites Inherit="False">
+			<li>IF_ImperialPropagandaTactics</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_Imgur</defName>
+		<label>Write Imperial Propaganda (x35)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>5500</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>800</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>35</IF_ImperialPropaganda>
+		</products>
+		<researchPrerequisites Inherit="False">
+			<li>IF_ImperialPropagandaTactics</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_Tumblr</defName>
+		<label>Write Imperial Propaganda (x40)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>6000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>900</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>40</IF_ImperialPropaganda>
+		</products>
+		<researchPrerequisites Inherit="False">
+			<li>IF_ImperialPropagandaTactics</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_Twitter</defName>
+		<label>Write Imperial Propaganda (x50)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>7000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>1000</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>50</IF_ImperialPropaganda>
+		</products>
+		<researchPrerequisites Inherit="False">
+			<li>IF_ImperialPropagandaTactics</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_Tiktok</defName>
+		<label>Write Imperial Propaganda (x100)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>10000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>2000</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>100</IF_ImperialPropaganda>
+		</products>
+		<researchPrerequisites Inherit="False">
+			<li>IF_ImperialPropagandaTactics</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="TSP_IF_VFED_USAMainstreamMedia_Propagandizing">
+		<defName>TSP_IF_VFED_ImperialPropaganda_Democrats</defName>
+		<label>Write Imperial Propaganda (x200)</label>
+		<descriptionHyperlinks Inherit="False">
+			<li>IF_ImperialPropaganda</li>
+			<li>VFED_Filth_Propaganda</li>
+		</descriptionHyperlinks>
+		<workAmount>15000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Textiles</li>
+						<li MayRequire="mlie.rimwriter">RimWriter_TechHandWriting</li>
+					</categories>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>3000</count>
+			</li>
+		</ingredients>
+		<products>
+			<IF_ImperialPropaganda>200</IF_ImperialPropaganda>
+		</products>
+		<researchPrerequisites Inherit="False">
+			<li>IF_ImperialPropagandaTactics</li>
+			<li MayRequire="mlie.rimwriter">RimWriter_TechTypewriting</li>
+		</researchPrerequisites>
+	</RecipeDef>
+</Defs>

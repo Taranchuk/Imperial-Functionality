@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Patch>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
+<Patch>
 	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/ThingDef[defName="VFED_WaterMain" or defName="VFED_ImperialUnderfarm"]/costList</xpath>
 	</Operation>
@@ -9,14 +9,28 @@
 		<xpath>Defs/ThingDef[defName="VFED_WaterMain"]</xpath>
 		<value>
 			<specialDisplayRadius>10.9</specialDisplayRadius>
+			<costStuffCount>400</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+
+				<!-- Mod support -->
+				<li MayRequire="TaosChagic.Igloo">Snowy</li>
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+			</stuffCategories>
 			<costList>
-				<Steel>250</Steel>
+				<Steel>5</Steel>
 				<ComponentIndustrial>5</ComponentIndustrial>
 			</costList>
 			<designationCategory>IF_ImperialTech</designationCategory>
 			<tickerType>Normal</tickerType>
 			<researchPrerequisites>
 				<li>IF_ImperialFarmingTechniques</li>
+				<li MayRequire="dubwise.dubsbadhygiene">LargeWaterPumps</li>
+				<li MayRequire="dubwise.dubsbadhygiene">Irrigation</li>
 			</researchPrerequisites>
 			<comps>
 				<li Class="CompProperties_Power">
@@ -39,12 +53,28 @@
 			<designationCategory>IF_ImperialTech</designationCategory>
 			<researchPrerequisites>
 				<li>IF_ImperialFarmingTechniques</li>
+				<li MayRequire="dubwise.dubsbadhygiene">Irrigation</li>
 			</researchPrerequisites>
 			<tickerType>Normal</tickerType>
+			<costStuffCount>800</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+				<li>Stony</li>
+
+				<!-- Mod support -->
+				<li MayRequire="TaosChagic.Igloo">Snowy</li>
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+				<li MayRequire="sarg.rimbees">RB_Waxy</li>
+				<li MayRequire="eltwofour.mantodeanrace">MantodeanOrganic</li>
+			</stuffCategories>
 			<costList>
-				<Steel>600</Steel>
-				<Plasteel>100</Plasteel>
-				<ComponentIndustrial>15</ComponentIndustrial>
+				<Plasteel>20</Plasteel>
+				<ComponentIndustrial>25</ComponentIndustrial>
+				<ComponentSpacer>4</ComponentSpacer>
 			</costList>
 			<comps>
 				<li Class="CompProperties_Power">
@@ -61,15 +91,6 @@
 				<deconstructible>true</deconstructible>
 			</building>
 			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/RoyalTitleDef[defName="Praetor"]</xpath>
-		<value>
-			<rewards>
-				<Techprint_IF_ImperialFarmingTechniques>1</Techprint_IF_ImperialFarmingTechniques>
-			</rewards>
 		</value>
 	</Operation>
 
@@ -97,21 +118,21 @@
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Refuelable">
-				<fuelLabel>Techie disc stack</fuelLabel>
-				<fuelGizmoLabel>Techie disc stacks</fuelGizmoLabel>
-				<outOfFuelMessage>No techie disc stacks</outOfFuelMessage>
+				<fuelLabel>Techite disc stack</fuelLabel>
+				<fuelGizmoLabel>Techite disc stacks</fuelGizmoLabel>
+				<outOfFuelMessage>No techite disc stacks</outOfFuelMessage>
 				<fuelFilter>
 					<thingDefs>
 						<li>VFED_TechiteDiscStack</li>
 					</thingDefs>
 				</fuelFilter>
-				<fuelCapacity>1</fuelCapacity>
+				<fuelCapacity>5</fuelCapacity>
 				<fuelMultiplier>1</fuelMultiplier>
-				<initialFuelPercent>0</initialFuelPercent>
-				<autoRefuelPercent>0.5</autoRefuelPercent>
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
 				<minimumFueledThreshold>1</minimumFueledThreshold>
-				<factorByDifficulty>true</factorByDifficulty>
+				<factorByDifficulty>false</factorByDifficulty>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<fuelIconPath>Structures/Misc/TechiteDiscStack</fuelIconPath>
 			</li>
@@ -125,13 +146,25 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="VFED_Techprinter"]</xpath>
 		<value>
+			<costStuffCount>1800</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+				<li>Stony</li>
+
+				<!-- Mod support -->
+				<li MayRequire="TaosChagic.Igloo">Snowy</li>
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+			</stuffCategories>
 			<designationCategory>IF_ImperialTech</designationCategory>
 			<researchPrerequisites>
 				<li>IF_ImperialTechiteTechniques</li>
 			</researchPrerequisites>
 			<costList>
-				<Steel>200</Steel>
-				<Plasteel>200</Plasteel>
+				<Plasteel>20</Plasteel>
 				<ComponentIndustrial>5</ComponentIndustrial>
 				<ComponentSpacer>5</ComponentSpacer>
 			</costList>
@@ -149,25 +182,6 @@
 			<building>
 				<deconstructible>true</deconstructible>
 			</building>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/RoyalTitleDef[defName="Duke"]</xpath>
-		<value>
-			<rewards>
-				<Techprint_IF_ImperialTechiteTechniques>1</Techprint_IF_ImperialTechiteTechniques>
-			</rewards>
-		</value>
-	</Operation>
-
-
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/RoyalTitleDef[defName="Consul"]</xpath>
-		<value>
-			<rewards>
-				<Techprint_IF_AdvancedImperialEquipment>1</Techprint_IF_AdvancedImperialEquipment>
-			</rewards>
 		</value>
 	</Operation>
 
@@ -192,8 +206,22 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[defName="VFEE_Apparel_AbsolverHelmet"]</xpath>
 		<value>
+			<costStuffCount>80</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+				<li>Stony</li>
+				<li>Woody</li>
+
+				<!-- Mod support -->
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticWooden</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+			</stuffCategories>
 			<costList>
-				<Plasteel>60</Plasteel>
+				<Plasteel>10</Plasteel>
 				<ComponentSpacer>3</ComponentSpacer>
 			</costList>
 		</value>
@@ -202,11 +230,27 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[defName="VFEE_Apparel_ArmorAbsolver"]</xpath>
 		<value>
+			<costStuffCount>100</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+				<li>Stony</li>
+				<li>Fabric</li>
+				<li>Leathery</li>
+
+				<!-- Mod support -->
+				<li MayRequire="TaosChagic.Igloo">Snowy</li>
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+				<li MayRequire="sarg.rimbees">RB_Waxy</li>
+				<li MayRequire="eltwofour.mantodeanrace">MantodeanOrganic</li>
+			</stuffCategories>
 			<costList>
-				<Plasteel>50</Plasteel>
+				<Plasteel>10</Plasteel>
 				<ComponentSpacer>4</ComponentSpacer>
 				<ComponentIndustrial>4</ComponentIndustrial>
-				<Cloth>50</Cloth>
 			</costList>
 		</value>
 	</Operation>
@@ -218,8 +262,19 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[defName="VEE_Gun_Fletcher"]</xpath>
 		<value>
+			<costStuffCount>190</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+
+				<!-- Mod support -->
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+			</stuffCategories>
 			<costList>
-				<Plasteel>90</Plasteel>
+				<ComponentIndustrial>8</ComponentIndustrial>
 				<ComponentSpacer>4</ComponentSpacer>
 			</costList>
 		</value>
@@ -228,8 +283,23 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[defName="VFEE_MeleeWeapon_Toxblade"]</xpath>
 		<value>
+			<costStuffCount>20</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+				<li>Stony</li>
+
+				<!-- Mod support -->
+				<li MayRequire="TaosChagic.Igloo">Snowy</li>
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+				<li MayRequire="sarg.rimbees">RB_Waxy</li>
+				<li MayRequire="eltwofour.mantodeanrace">MantodeanOrganic</li>
+			</stuffCategories>
 			<costList>
-				<Plasteel>20</Plasteel>
+				<Plasteel>5</Plasteel>
 				<ComponentSpacer>2</ComponentSpacer>
 				<VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">1</VPE_Eltex>
 			</costList>
@@ -239,22 +309,29 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[defName="VFEE_Apparel_TechfriarCrown"]</xpath>
 		<value>
+			<costStuffCount>50</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+				<li>Stony</li>
+
+				<!-- Mod support -->
+				<li MayRequire="TaosChagic.Igloo">Snowy</li>
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+				<li MayRequire="sarg.rimbees">RB_Waxy</li>
+				<li MayRequire="eltwofour.mantodeanrace">MantodeanOrganic</li>
+			</stuffCategories>
 			<costList>
-				<Plasteel>50</Plasteel>
-				<ComponentSpacer>6</ComponentSpacer>
+				<ComponentSpacer>3</ComponentSpacer>
 				<VPE_Eltex MayRequire="VanillaExpanded.VPsycastsE">2</VPE_Eltex>
 			</costList>
 		</value>
 	</Operation> 
 
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/RoyalTitleDef[defName="Baron"]</xpath>
-		<value>
-			<rewards>
-				<Techprint_IF_ImperialSurveillanceSystems>1</Techprint_IF_ImperialSurveillanceSystems>
-			</rewards>
-		</value>
-	</Operation>
+
 	
 	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/ThingDef[defName="VFED_SurveillancePillar" or defName="VFED_SurveillanceDisplayBank" or defName="VFED_SurveillanceStation"]/costList</xpath>
@@ -267,9 +344,25 @@
 			<researchPrerequisites>
 				<li>IF_ImperialSurveillanceSystems</li>
 			</researchPrerequisites>
+			<costStuffCount>100</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+				<li>Stony</li>
+				<li>Woody</li>
+
+				<!-- Mod support -->
+				<li MayRequire="TaosChagic.Igloo">Snowy</li>
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticWooden</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+				<li MayRequire="sarg.rimbees">RB_Waxy</li>
+				<li MayRequire="eltwofour.mantodeanrace">MantodeanOrganic</li>
+			</stuffCategories>
 			<costList>
-				<Steel>100</Steel>
-				<ComponentIndustrial>4</ComponentIndustrial>
+				<ComponentIndustrial>7</ComponentIndustrial>
 			</costList>
 			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 		</value>
@@ -296,8 +389,18 @@
 			<researchPrerequisites>
 				<li>IF_ImperialSurveillanceSystems</li>
 			</researchPrerequisites>
+			<costStuffCount>125</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+
+				<!-- Mod support -->
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+			</stuffCategories>
 			<costList>
-				<Steel>100</Steel>
 				<ComponentIndustrial>4</ComponentIndustrial>
 			</costList>
 			<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
@@ -309,13 +412,13 @@
 		<value>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>50</basePowerConsumption>
+				<basePowerConsumption>1500</basePowerConsumption>
 				<shortCircuitInRain>false</shortCircuitInRain>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Facility">
 				<maxSimultaneous>999999</maxSimultaneous>
-				<maxDistance>12.9</maxDistance>
+				<maxDistance>75</maxDistance>
 			</li>
 			<li>
 				<compClass>ImperialFunctionality.CompDisplayBank</compClass>
@@ -337,8 +440,22 @@
 			<researchPrerequisites>
 				<li>IF_ImperialSurveillanceSystems</li>
 			</researchPrerequisites>
+			<costStuffCount>300</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+				<li>Stony</li>
+
+				<!-- Mod support -->
+				<li MayRequire="TaosChagic.Igloo">Snowy</li>
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+				<li MayRequire="sarg.rimbees">RB_Waxy</li>
+				<li MayRequire="eltwofour.mantodeanrace">MantodeanOrganic</li>
+			</stuffCategories>
 			<costList>
-				<Steel>150</Steel>
 				<ComponentIndustrial>5</ComponentIndustrial>
 				<ComponentSpacer>4</ComponentSpacer>
 			</costList>
@@ -377,24 +494,155 @@
 			</li>
 		</value>
 	</Operation>
-
+	
+	<!-- Aelanna's Model No-Match Detector and Insertion Code -->
+	<!-- Special thanks to Aelanna for straight-up saving me scores of headaches! -->
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Marquess"]/rewards</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="VFEE_Marquess"]</xpath>
+			<success>Always</success>
+			<value>
+				<rewards></rewards>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Archduke"]/rewards</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="VFEE_Archduke"]</xpath>
+			<success>Always</success>
+			<value>
+				<rewards></rewards>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="Baron"]/rewards</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="Baron"]</xpath>
+			<success>Always</success>
+			<value>
+				<rewards></rewards>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="Duke"]/rewards</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="Duke"]</xpath>
+			<success>Always</success>
+			<value>
+				<rewards></rewards>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="Consul"]/rewards</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="Consul"]</xpath>
+			<success>Always</success>
+			<value>
+				<rewards></rewards>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="Praetor"]/rewards</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="Praetor"]</xpath>
+			<success>Always</success>
+			<value>
+				<rewards></rewards>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="Praetor"]/rewards</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="Praetor"]</xpath>
+			<success>Always</success>
+			<value>
+				<rewards></rewards>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="Knight"]/rewards</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="Knight"]</xpath>
+			<success>Always</success>
+			<value>
+				<rewards></rewards>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<!--
 	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Marquess"]</xpath>
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Marquess"]/rewards</xpath>
 		<value>
-			<rewards>
-				<Techprint_IF_ImperialPropagandaTactics>1</Techprint_IF_ImperialPropagandaTactics>
-			</rewards>
+			<Techprint_IF_ImperialPropagandaTactics>1</Techprint_IF_ImperialPropagandaTactics>
+		</value>
+	</Operation>
+	-->
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Archduke"]/rewards</xpath>
+		<value>
+			<Techprint_IF_AdvancedImperialDefenses>1</Techprint_IF_AdvancedImperialDefenses>
 		</value>
 	</Operation>
 	
 	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/RoyalTitleDef[defName="VFEE_Archduke"]</xpath>
+		<xpath>/Defs/RoyalTitleDef[defName="Baron"]/rewards</xpath>
 		<value>
-			<rewards>
-				<Techprint_IF_AdvancedImperialDefenses>1</Techprint_IF_AdvancedImperialDefenses>
-			</rewards>
+			<Techprint_IF_ImperialSurveillanceSystems>1</Techprint_IF_ImperialSurveillanceSystems>
 		</value>
 	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="Duke"]/rewards</xpath>
+		<value>
+			<Techprint_IF_ImperialTechiteTechniques>1</Techprint_IF_ImperialTechiteTechniques>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="Consul"]/rewards</xpath>
+		<value>
+			<Techprint_IF_AdvancedImperialEquipment>1</Techprint_IF_AdvancedImperialEquipment>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="Praetor"]/rewards</xpath>
+		<value>
+			<Techprint_IF_ImperialFarmingTechniques>1</Techprint_IF_ImperialFarmingTechniques>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="Knight"]/rewards</xpath>
+		<value>
+			<Techprint_IF_ImperialPropagandaTactics>1</Techprint_IF_ImperialPropagandaTactics>
+		</value>
+	</Operation>	
 	
 	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/ThingDef[defName="VFED_ImperialMegaHighShield"]/costList</xpath>
@@ -403,10 +651,21 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="VFED_ImperialMegaHighShield"]</xpath>
 		<value>
+			<costStuffCount>2500</costStuffCount>
+			<stuffCategories>
+				<li>Metallic</li>
+				<li>Stony</li>
+
+				<!-- Mod support -->
+				<li MayRequire="Dubwise.Rimefeller">Plastic</li>
+				<li MayRequire="Dubwise.Rimefeller">Composite</li>
+				<li MayRequire="sarg.alphabiomes">AB_Exotic</li>
+				<li MayRequire="sarg.alphabiomes">AB_ExoticMetals</li>
+				<li MayRequire="biomesteam.biomescore">BMT_ChitinStuff</li>
+			</stuffCategories>
 			<costList>
-				<Steel>2000</Steel>
-				<Plasteel>500</Plasteel>
-				<ComponentSpacer>15</ComponentSpacer>
+				<Plasteel>100</Plasteel>
+				<ComponentSpacer>10</ComponentSpacer>
 				<ComponentIndustrial>20</ComponentIndustrial>
 			</costList>
 			<designationCategory>IF_ImperialTech</designationCategory>
@@ -432,5 +691,42 @@
 			</li>
 		</value>
 	</Operation>
+
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="Knight"]/grantedAbilities</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="Knight"]</xpath>
+			<success>Always</success>
+			<value>
+				<grantedAbilities></grantedAbilities>
+			</value>
+		</nomatch>
+	</Operation>
 	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="Knight"]/grantedAbilities</xpath>
+		<value>
+			<li>IF_RoyalInvitation</li>
+		</value>
+	</Operation>
+	
+	<!-- Add comps field to Settlement WorldObjectDef if it doesn't exist -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_HighStellarch"]/grantedAbilities</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/RoyalTitleDef[defName="VFEE_HighStellarch"]</xpath>
+			<success>Always</success>
+			<value>
+				<grantedAbilities></grantedAbilities>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef[defName="VFEE_HighStellarch"]/grantedAbilities</xpath>
+		<value>
+			<li>IF_FormEmpireAlliance</li>
+		</value>
+	</Operation>
 </Patch>
