@@ -65,7 +65,8 @@ namespace ImperialFunctionality
             return false;
         }
 
-        public ThingDef selectedThingDef;
+        private ThingDef _selectedThingDef;
+        public ThingDef selectedThingDef => _selectedThingDef ??= Candidates.First();
 
         public override int TicksUntilSpawn => GenDate.TicksPerDay * 7;
 
@@ -83,10 +84,6 @@ namespace ImperialFunctionality
         {
             base.PostSpawnSetup(respawningAfterLoad);
             compRefuelable = parent.GetComp<CompRefuelable>();
-            if (!respawningAfterLoad)
-            {
-                selectedThingDef = Candidates.First();
-            }
         }
 
         protected override void TryDoSpawn()
@@ -116,7 +113,7 @@ namespace ImperialFunctionality
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Defs.Look(ref selectedThingDef, "ImperialFunctionality_selectedThingDef");
+            Scribe_Defs.Look(ref _selectedThingDef, "ImperialFunctionality_selectedThingDef");
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -131,7 +128,7 @@ namespace ImperialFunctionality
                     {
                         floatList.Add(new FloatMenuOption(thingDef.LabelCap, delegate
                         {
-                            selectedThingDef = thingDef;
+                            _selectedThingDef = thingDef;
                             ResetCountdown();
                         }));
                     }
